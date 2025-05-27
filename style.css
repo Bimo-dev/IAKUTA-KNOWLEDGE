@@ -1,0 +1,219 @@
+    :root {
+      --primary: #f07109;
+      --primary-dark: #d16208;
+      --secondary: #242424;
+      --light: #ffffff;
+      --dark: #222222;
+      --gray: #f5f5f5;
+      --text: #333333;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; font-family:Arial,sans-serif; }
+    body { background:var(--light); color:var(--text); padding-top:70px; }
+
+    /* Header */
+    header {
+      position:fixed; 
+      top:0; 
+      left:0; 
+      right:0;
+      background:var(--light);
+      box-shadow:0 2px 5px rgba(0,0,0,0.1);
+      display:flex; align-items:center; justify-content:space-between;
+      padding:16px 20px; z-index:1000;
+    }
+    .logo img { height:90px; }
+    nav ul {
+      display:flex; list-style:none; gap:20px;
+    }
+    nav a {
+      text-decoration:none; color:var(--dark); font-weight:600;
+      transition:color .3s;
+    }
+    nav a:hover { color:var(--primary); }
+
+    /* Social Icons in Header */
+    .header-social {
+      display:flex; gap:12px; margin-left:20px;
+    }
+    .header-social a {
+      color:var(--dark); font-size:1.5rem; transition:color .3s;
+    }
+    .header-social a:hover { color:var(--primary); }
+
+    .mobile-menu { display:none; font-size:1.9rem; cursor:pointer; }
+
+    @media(max-width:768px){
+      nav ul {
+        display:none; flex-direction:column;
+        position:absolute; top:102px; left:0; right:0;
+        background:var(--light); padding:20px; gap:15px;
+      }
+      nav ul.active { display:flex; }
+      .mobile-menu { display:block; }
+
+      /* show social icons below menu */
+      .header-social { display:none; }
+      .mobile-social { display:flex; justify-content:center; gap:15px; padding:15px 0; }
+    }
+
+    /* Hero */
+    .hero {
+      background: var(--secondary) url('hero-bg.jpg') center/cover;
+      color:#fff; text-align:center; padding:100px 20px;
+    }
+    .hero h1 { font-size:2.5rem; margin-bottom:15px; }
+    .hero p { max-width:600px; margin:0 auto 25px; }
+    .hero .cta-button {
+      background:var(--primary); color:#fff; padding:10px 20px;
+      border:none; border-radius:4px; text-decoration:none;
+    }
+
+    /* Serviços */
+    .services { background:var(--gray); padding:60px 20px; }
+    .services .section-title { text-align:center; margin-bottom:40px; }
+    .services .section-title h2 { color:var(--secondary); }
+    .services-grid {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:20px; max-width:1000px; margin:0 auto;
+    }
+    .service-card {
+      background:#fff; padding:20px; text-align:center;
+      border-radius:6px; box-shadow:0 2px 5px rgba(0,0,0,0.1);
+    }
+    .service-card i { font-size:2rem; color:var(--primary); margin-bottom:10px; }
+
+    /* Cursos */
+    .container { max-width:900px; margin:0 auto; padding:40px 20px; }
+    table {
+      width:100%; border-collapse:collapse; background:#fff;
+      box-shadow:0 2px 5px rgba(0,0,0,0.1);
+    }
+    th, td { padding:12px; border-bottom:1px solid #eee; text-align:left; }
+    th { background:var(--secondary); color:#fff; }
+    button.table-cta {
+      background:var(--primary); color:#fff; border:none;
+      padding:8px 12px; border-radius:4px; cursor:pointer;
+    }
+    button.table-cta:hover { background:var(--primary-dark); }
+
+    /* Modal detalhes */
+    .modal {
+      display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+      background:rgba(0,0,0,0.5); align-items:center; justify-content:center;
+      z-index:2000;
+    }
+    .modal .box {
+      background:#fff; padding:20px; border-radius:6px;
+      max-width:400px; width:90%; position:relative;
+    }
+    .modal .close {
+  position: absolute;top: 10px;
+  right: 70px;background: none;
+  border: none;font-size: 1.2rem;
+  cursor: pointer; color: var(--primary);
+}
+    .modal h3 { margin-bottom:10px; color:var(--secondary); }
+    .modal p { margin:6px 0; }
+    .modal button { margin-top:15px; width:100%; padding:10px;
+      background:var(--primary); color:#fff; border:none; border-radius:4px;
+    }
+
+    /* Sobre */
+    #about {
+      background:#fff; padding:60px 20px;
+    }
+    #about .inner {
+      max-width:900px; margin:0 auto;
+      display:flex; flex-wrap:wrap; gap:30px; align-items:center;
+    }
+    #about .text { flex:1; min-width:280px; }
+    #about .text h2 { color:var(--secondary); margin-bottom:15px; }
+    #about .text p { margin-bottom:15px; }
+    #about .img { flex:1; min-width:280px; text-align:center; }
+    #about .img img {
+      max-width:100%; border-radius:6px; box-shadow:0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    /* CTA final */
+    .cta-section {
+      background:#333; color:#fff; text-align:center; padding:60px 20px;
+    }
+    .cta-section h2 { font-size:1.8rem; margin-bottom:15px; }
+    .cta-section p { margin-bottom:25px; }
+    .cta-section .cta-button {
+      background:var(--primary); color:#fff; padding:10px 20px;
+      border:none; border-radius:4px; text-decoration:none;
+    }
+
+    /* Footer */
+    footer {
+      background:#222; color:#ccc; padding:60px 20px;
+    }
+    .footer-container {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:40px; max-width:1000px; margin:0 auto;
+    }
+    .footer-logo img { height:40px; margin-bottom:10px; }
+    .footer-logo p { margin-bottom:10px; }
+    .footer-logo .social-links a {
+      color:var(--primary); margin-right:10px; font-size:1.2rem;
+    }
+    .footer-links h3 { color:#fff; margin-bottom:10px; }
+    .footer-links ul { list-style:none; }
+    .footer-links a {
+      color:#ccc; text-decoration:none; display:block; margin:5px 0;
+    }
+    .footer-links a:hover { color:var(--primary); }
+    .contact-info li { display:flex; align-items:center; margin:5px 0; }
+    .contact-info i { margin-right:8px; color:var(--primary); }
+
+    /* Copyright */
+    .copyright {
+      text-align:center; margin-top:40px; border-top:1px solid #444;
+      padding-top:20px; font-size:0.9rem; color:#777;
+    }
+
+/* 1) Esconde o bloco mobile‑only no desktop */
+.social-mobile-only {
+  display: none;
+}
+
+/* 2) Quando a tela for pequena e o menu estiver “active”, mostra estes ícones */
+@media (max-width: 768px) {
+  nav ul.active .social-mobile-only {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+  }
+
+  /* E no mobile você já esconde os ícones do header, se quiser: */
+  .header-social {
+    display: none;
+  }
+}
+#inscricaoModal form {
+  display: flex;
+  flex-direction: column;
+}
+
+#inscricaoModal input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#inscricaoModal button {
+  margin-top: 15px;
+  background: var(--primary);
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#inscricaoModal button:hover {
+  background: var(--primary-dark);
+}
