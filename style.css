@@ -1,219 +1,1061 @@
-    :root {
-      --primary: #f07109;
-      --primary-dark: #d16208;
-      --secondary: #242424;
-      --light: #ffffff;
-      --dark: #222222;
-      --gray: #f5f5f5;
-      --text: #333333;
-    }
-    * { margin:0; padding:0; box-sizing:border-box; font-family:Arial,sans-serif; }
-    body { background:var(--light); color:var(--text); padding-top:70px; }
-
-    /* Header */
-    header {
-      position:fixed; 
-      top:0; 
-      left:0; 
-      right:0;
-      background:var(--light);
-      box-shadow:0 2px 5px rgba(0,0,0,0.1);
-      display:flex; align-items:center; justify-content:space-between;
-      padding:16px 20px; z-index:1000;
-    }
-    .logo img { height:90px; }
-    nav ul {
-      display:flex; list-style:none; gap:20px;
-    }
-    nav a {
-      text-decoration:none; color:var(--dark); font-weight:600;
-      transition:color .3s;
-    }
-    nav a:hover { color:var(--primary); }
-
-    /* Social Icons in Header */
-    .header-social {
-      display:flex; gap:12px; margin-left:20px;
-    }
-    .header-social a {
-      color:var(--dark); font-size:1.5rem; transition:color .3s;
-    }
-    .header-social a:hover { color:var(--primary); }
-
-    .mobile-menu { display:none; font-size:1.9rem; cursor:pointer; }
-
-    @media(max-width:768px){
-      nav ul {
-        display:none; flex-direction:column;
-        position:absolute; top:102px; left:0; right:0;
-        background:var(--light); padding:20px; gap:15px;
-      }
-      nav ul.active { display:flex; }
-      .mobile-menu { display:block; }
-
-      /* show social icons below menu */
-      .header-social { display:none; }
-      .mobile-social { display:flex; justify-content:center; gap:15px; padding:15px 0; }
-    }
-
-    /* Hero */
-    .hero {
-      background: var(--secondary) url('hero-bg.jpg') center/cover;
-      color:#fff; text-align:center; padding:100px 20px;
-    }
-    .hero h1 { font-size:2.5rem; margin-bottom:15px; }
-    .hero p { max-width:600px; margin:0 auto 25px; }
-    .hero .cta-button {
-      background:var(--primary); color:#fff; padding:10px 20px;
-      border:none; border-radius:4px; text-decoration:none;
-    }
-
-    /* Serviços */
-    .services { background:var(--gray); padding:60px 20px; }
-    .services .section-title { text-align:center; margin-bottom:40px; }
-    .services .section-title h2 { color:var(--secondary); }
-    .services-grid {
-      display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:20px; max-width:1000px; margin:0 auto;
-    }
-    .service-card {
-      background:#fff; padding:20px; text-align:center;
-      border-radius:6px; box-shadow:0 2px 5px rgba(0,0,0,0.1);
-    }
-    .service-card i { font-size:2rem; color:var(--primary); margin-bottom:10px; }
-
-    /* Cursos */
-    .container { max-width:900px; margin:0 auto; padding:40px 20px; }
-    table {
-      width:100%; border-collapse:collapse; background:#fff;
-      box-shadow:0 2px 5px rgba(0,0,0,0.1);
-    }
-    th, td { padding:12px; border-bottom:1px solid #eee; text-align:left; }
-    th { background:var(--secondary); color:#fff; }
-    button.table-cta {
-      background:var(--primary); color:#fff; border:none;
-      padding:8px 12px; border-radius:4px; cursor:pointer;
-    }
-    button.table-cta:hover { background:var(--primary-dark); }
-
-    /* Modal detalhes */
-    .modal {
-      display:none; position:fixed; top:0; left:0; width:100%; height:100%;
-      background:rgba(0,0,0,0.5); align-items:center; justify-content:center;
-      z-index:2000;
-    }
-    .modal .box {
-      background:#fff; padding:20px; border-radius:6px;
-      max-width:400px; width:90%; position:relative;
-    }
-    .modal .close {
-  position: absolute;top: 10px;
-  right: 70px;background: none;
-  border: none;font-size: 1.2rem;
-  cursor: pointer; color: var(--primary);
+:root {
+--primary: #f07109;
+--primary-dark: #d16208;
+--secondary: #242424;
+--light: #ffffff;
+--dark: #222222;
+--gray: #f5f5f5;   
+--text: #333333;
 }
-    .modal h3 { margin-bottom:10px; color:var(--secondary); }
-    .modal p { margin:6px 0; }
-    .modal button { margin-top:15px; width:100%; padding:10px;
-      background:var(--primary); color:#fff; border:none; border-radius:4px;
-    }
-
-    /* Sobre */
-    #about {
-      background:#fff; padding:60px 20px;
-    }
-    #about .inner {
-      max-width:900px; margin:0 auto;
-      display:flex; flex-wrap:wrap; gap:30px; align-items:center;
-    }
-    #about .text { flex:1; min-width:280px; }
-    #about .text h2 { color:var(--secondary); margin-bottom:15px; }
-    #about .text p { margin-bottom:15px; }
-    #about .img { flex:1; min-width:280px; text-align:center; }
-    #about .img img {
-      max-width:100%; border-radius:6px; box-shadow:0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    /* CTA final */
-    .cta-section {
-      background:#333; color:#fff; text-align:center; padding:60px 20px;
-    }
-    .cta-section h2 { font-size:1.8rem; margin-bottom:15px; }
-    .cta-section p { margin-bottom:25px; }
-    .cta-section .cta-button {
-      background:var(--primary); color:#fff; padding:10px 20px;
-      border:none; border-radius:4px; text-decoration:none;
-    }
-
-    /* Footer */
-    footer {
-      background:#222; color:#ccc; padding:60px 20px;
-    }
-    .footer-container {
-      display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-      gap:40px; max-width:1000px; margin:0 auto;
-    }
-    .footer-logo img { height:40px; margin-bottom:10px; }
-    .footer-logo p { margin-bottom:10px; }
-    .footer-logo .social-links a {
-      color:var(--primary); margin-right:10px; font-size:1.2rem;
-    }
-    .footer-links h3 { color:#fff; margin-bottom:10px; }
-    .footer-links ul { list-style:none; }
-    .footer-links a {
-      color:#ccc; text-decoration:none; display:block; margin:5px 0;
-    }
-    .footer-links a:hover { color:var(--primary); }
-    .contact-info li { display:flex; align-items:center; margin:5px 0; }
-    .contact-info i { margin-right:8px; color:var(--primary); }
-
-    /* Copyright */
-    .copyright {
-      text-align:center; margin-top:40px; border-top:1px solid #444;
-      padding-top:20px; font-size:0.9rem; color:#777;
-    }
-
-/* 1) Esconde o bloco mobile‑only no desktop */
-.social-mobile-only {
-  display: none;
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Arial', sans-serif;
+}
+body {
+background: var(--light);
+color: var(--text);
+padding-top: 70px;
 }
 
-/* 2) Quando a tela for pequena e o menu estiver “active”, mostra estes ícones */
+/* ========== TIPOGRAFIA ========== */
+h1, h2, h3, h4, h5, h6 {
+font-weight: 700;
+line-height: 1.2;
+margin-bottom: 1.2rem;
+}
+
+h1 {
+font-size: 2.8rem;
+}
+
+h2 {
+font-size: 2.2rem;
+}
+
+h3 {
+font-size: 1.8rem;
+}
+
+p {
+margin-bottom: 1.5rem;
+line-height: 1.7;
+}
+
+/* ========== HEADER ========== */
+header {
+position:fixed; 
+top:0; 
+left:0; 
+right:0;
+background:var(--light);
+box-shadow:0 2px 5px rgba(0,0,0,0.1);
+display:flex; align-items:center; justify-content:space-between;
+padding:16px 20px; z-index:1000;
+}
+
+ /* Logo */
+.logo img {
+height: 60px;
+}
+
+/* Menu principal/Navegação principal */
+nav ul {
+display: flex; list-style: none;
+gap: 20px;
+}
+
+/* Links de navegação */
+nav a {
+text-decoration: none; color: var(--dark);
+font-weight: 600; /*grossura das letras do menu*/
+transition: all 0.3s;
+}
+nav a:hover { color: var(--primary); }
+
+/* Menu mobile */
+.mobile-menu { display: none; font-size: 1.9rem; 
+cursor: pointer; }
+/* ========== RESPONSIVIDADE HEADER ========== */
 @media (max-width: 768px) {
-  nav ul.active .social-mobile-only {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    padding-top: 15px;
-    border-top: 1px solid #eee;
-  }
-
-  /* E no mobile você já esconde os ícones do header, se quiser: */
-  .header-social {
-    display: none;
-  }
+nav ul {
+display:none; flex-direction:column;
+position:absolute; top:102px; left:0; right:0;
+background:var(--light); padding:20px; gap:15px;
+box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
-#inscricaoModal form {
-  display: flex;
-  flex-direction: column;
+nav ul.active { display: flex; }
+.mobile-menu { display: block; }
+.header-social { display: none; }
 }
 
-#inscricaoModal input {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+/* ========== BOTÕES CTA  ========== */
+.cta-button {
+background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+color: #fff;
+padding: 15px 40px;
+border: none;
+border-radius: 30px;
+font-weight: 600;
+font-size: 1.1rem;
+cursor: pointer;
+display: inline-flex;
+align-items: center;
+gap: 10px;
+transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+text-decoration: none;
+}
+.cta-button:hover { 
+background:
+var(--primary-dark);
+transform: translateY(-3px);
+box-shadow: 0 8px 20px rgba(240, 113, 9, 0.3);
 }
 
-#inscricaoModal button {
-  margin-top: 15px;
+.cta-button i {
+margin-right: 8px;
+}
+
+/* ========== SEÇÕES GERAIS ========== */
+section {
+padding: 80px 0;
+}
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
+}
+.section-title {
+text-align: center;
+margin-bottom: 50px;
+font-size: 28px;
+color: #333;
+}
+
+.section-title h2 {
+font-size: 2.5rem;
+color: var(--secondary);
+margin-bottom: 15px;
+}
+.section-title p {
+max-width: 700px;
+margin: 0 auto;
+color: var(--text);
+font-size: 1.2rem;
+}
+/* ========== HERO SECTION ========== */
+.hero {
+background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('imagens/hero-bg.jpg');
+background-size: cover;
+background-position: center;
+color: white; text-align: center; padding: 100px 20px;
+}        
+.hero h1 { font-size: 2.5rem; margin-bottom: 15px; }
+.hero p { max-width: 600px; margin: 0 auto 25px;} 
+
+/* ========== SEÇÃO SOBRE ========== */
+#about {
+background: #fff; padding: 60px 20px;
+}
+#about .inner {
+max-width: 1000px; margin: 0 auto;
+display: flex; flex-wrap: wrap; gap: 30px; align-items: center;
+}
+#about .text {
+flex: 1;
+min-width: 280px;
+text-align: justify; /* Ou use 'center' para centralizar */
+text-align-last: left; /* Centraliza a última linha se usar justify */
+max-width: 700px;
+margin: 0 auto;/* Centraliza o bloco de texto */
+}
+/* Aumentar fonte dos parágrafos */
+#about .text p {
+font-size: 1.1rem; /* 20% maior que o tamanho padrão */
+line-height: 1.7; /* Melhora legibilidade */
+}
+#about .img {
+flex: 1; min-width: 280px; text-align: center;
+}
+#about .img img {
+max-width: 100%; border-radius: 6px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+/* Aumentar fonte do botão */
+#about .cta-button {
+font-size: 1.5em;
+padding: 15px 30px; /* Botão mais destacado */
+}
+
+/* ========== SEÇÃO DE CURSOS ========== */
+table {
+width: 100%;
+border-collapse: separate;
+border-spacing: 0 15px;
+margin: 30px 0;
+background: transparent;
+background: #fff;
+box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+th {
+  background: var(--dark) !important;
+  color: white;
+  font-size: 1.3rem;
+  padding: 18px 25px !important;
+  position: sticky;
+  top: 70px;
+}
+
+td {
+  padding: 18px 25px !important;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  vertical-align: middle;
+}
+
+th,td { padding: 12px; border-bottom: 1px solid #eee; text-align: left; }
+th { background: var(--secondary); color: #fff; }
+
+.table-cta {
+background: var(--primary);
+color: #fff;
+border: none;
+padding: 8px 12px;
+border-radius: 4px;
+cursor: pointer;
+transition: background 0.3s;
+}
+.table-cta:hover { 
+background: var(--primary-dark);
+}
+
+/* ========== DETALHES DO CURSO ========== */
+#curso-detalhes {
+display: none;
+background: #fff;
+padding: 40px 20px;
+box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+margin: 30px auto;
+border-radius: 8px;
+}
+/* Detalhes do curso geral */
+.detalhes-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 20px;
+margin: 30px 0;
+padding-bottom: 30px;
+border-bottom: 2px solid var(--primary);
+}
+.detalhe-item {
+text-align: center;
+padding: 30px;
+background: var(--gray);
+border-radius: 10px;
+}
+.detalhe-item h3 {
+color: var(--primary);
+margin-bottom: 10px;
+}
+.voltar-button {
+background: none;
+border: none;
+color: var(--primary);
+font-size: 1.1rem;
+cursor: pointer;
+margin-bottom: 20px;
+padding: 8px 15px;
+border-radius: 5px;
+transition: background 0.3s;
+display: flex;
+align-items: center;
+gap: 8px;
+}
+.voltar-button:hover {
+background: var(--gray);
+}
+
+.detalhes-conteudo h3 {
+margin: 35px 0 15px;
+padding-left: 15px;
+border-left: 4px solid var(--primary);
+color: var(--secondary);
+}
+
+.detalhes-conteudo p {
+line-height: 1.8;
+margin-bottom: 25px;
+padding-left: 20px;
+}
+
+.voltar-button i {
+font-size: 1.2rem;
+}
+/* ========== SERVIÇOS ========== */
+.servicos {
+padding: 80px 20px;
+background-color: var(--gray);    
+}
+
+.servicos-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 30px;
+max-width: 1000px;
+margin: 0 auto;
+}
+.servico-card {
+background: #fff;
+border-radius: 10px;
+padding: 30px;
+box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+text-align: center;
+transition: all 0.3s ease;
+display: flex;
+flex-direction: column;
+align-items: center; /* Centraliza ícone e texto */
+min-height: 100px;
+text-align: center; /* Garante alinhamento do texto */
+padding: 25px; /* Espaçamento interno mais generoso */
+}
+.servico-card i {
+font-size: 2.5rem;/*tamanho dos icones*/
+color: var(--primary);
+margin-bottom: 15px;
+}
+.servico-card h3 {
+font-size: 1.5rem;/*tamanho das letras*/
+margin-bottom: 15px;
+color: var(--secondary);
+}
+.servico-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+/*Garantir visibilidade inicial oculta da Historia*/
+.nossa-historia-container {
+opacity: 0;
+max-height: 0;
+overflow: hidden;
+transition: all 0.5s ease-in-out;
+margin: 20px 0;
+}
+.nossa-historia-container.visible {
+opacity: 1;
+max-height: 5000px; /* Valor maior que o conteúdo real */
+padding: 20px 0;
+}
+
+/* ========== FOOTER ========== */
+footer {
+background-color: var(--dark); color: white; padding: 40px 20px;
+}   
+.footer-container {
+display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 40px; max-width: 1000px; margin: 0 auto;
+font-size: 0.9rem;
+} 
+.footer-logo img { height: 40px; margin-bottom: 10px; } 
+
+.footer-links h3 { margin-bottom: 10px; font-size: 1rem; }      
+.footer-links ul { list-style: none; }        
+.footer-links ul li { margin-bottom: 10px;
+font-size: 1rem; /* Aumentar links */
+}       
+.footer-links ul li a {
+color: #ccc;
+text-decoration: none;
+transition: color 0.3s;
+}        
+.footer-links ul li a:hover {
+color: var(--primary);
+}       
+.social-links {
+display: flex;
+gap: 15px;
+margin-top: 20px;        
+}        
+.social-links a {
+color: #f07109;
+font-size: 1.4rem;
+transition: color 0.3s;
+}   
+.social-links a:hover {
+color: var(--primary);
+}
+
+.copyright {
+text-align: center; margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);
+padding-top: 20px; font-size: 0.9rem; opacity: 0.8; 
+}      
+
+
+/* ========== MODAIS de Inscrição========== */
+.modal {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.5);
+align-items: center;
+justify-content: center;
+z-index: 2000;
+}
+.modal .box {
+background: #fff;
+padding: 30px;
+border-radius: 10px;
+position: relative;
+max-width: 500px;
+width: 90%;
+max-height: 90vh;
+overflow-y: auto;
+}
+.modal .close {
+position: absolute;
+top: 15px;
+right: 20px;
+background: none;
+border: none;
+font-size: 24px;
+cursor: pointer;
+color: var(--primary);
+}
+#form-inscricao input {
+width: 100%;
+padding: 10px;
+margin: 8px 0;
+border: 1px solid #ddd;
+border-radius: 4px;
+}
+
+
+
+/*botoes das redes sociais no menu mobile*/
+@media (max-width: 768px) {
+/* Ajuste para os ícones sociais */
+.social-mobile {
+display: flex;
+justify-content:center ; 
+width: 100%;
+padding: 20px 0 0;
+margin-top: 15px;
+border-top: 1px solid #eee;
+}
+.social-mobile .social-icons {
+display: flex;
+gap: 30px;
+justify-content: center;
+width: 100%;
+}
+.social-mobile a {
+color: var(--primary);
+font-size: 1.4rem;
+transition: color 0.3s;
+}
+.social-mobile a:hover {
+color: var(--primary-dark);
+}
+
+/* Garantir alinhamento dos itens */
+nav ul {
+align-items: flex-start;
+}
+nav ul li {
+width: 100%;
+}
+nav ul li a {
+padding: 10px 0;
+display: block;
+}
+}
+
+/* Ícones sociais no header (versão desktop) */
+.header-social {
+display: flex; gap: 12px; margin-left: 20px;
+}
+.header-social a {
+color: var(--dark); font-size: 1.5rem;/*tamanho dos icones sociais*/
+transition: color 0.3s;
+}
+.header-social a:hover { color: var(--primary); }
+
+@media (max-width: 768px) {
+.header-social {
+display: none; /* Esconde no mobile */
+}
+}
+
+/* Esconde por padrão */
+.desktop-only {
+display: none;
+}
+.mobile-only {
+display: none;
+}
+
+/* CTA */
+.cta-section {
+padding: 80px 20px;
+text-align: center;
+background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('imagens/cta-bg.jpg');
+background-size: cover;
+background-position: center;
+color: white;
+}      
+.cta-section h2 { font-size: 1.9rem; margin-bottom: 15px; }        
+.cta-section p { margin: 0 auto 25px; max-width: 700px; }
+/* Quando for desktop (largura maior que 768px) */
+@media screen and (min-width: 769px) {
+.desktop-only {
+display: flex; /* ou inline-flex, conforme necessário */
+gap: 10px;
+}
+}
+/* Quando for mobile (largura menor que 768px) */
+@media screen and (max-width: 768px) {
+.mobile-only {
+display: flex;
+gap: 10px;
+}
+}
+
+/* Estilos do Modal de Contato */
+.contact-modal {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.5);
+z-index: 2000;
+justify-content: center;
+align-items: center;
+}
+/* Adicione esta classe para quando estiver ativo */
+.contact-modal.active {
+display: flex;
+}
+.modal-content {
+background: white;
+padding: 30px;
+border-radius: 10px;
+position: relative;
+max-width: 500px;
+width: 90%;
+}   
+.close-modal {
+position: absolute;
+top: 15px;
+right: 20px;
+font-size: 24px;
+cursor: pointer;
+color: var(--primary);
+}   
+.contact-table {
+width: 100%;
+margin-top: 20px;
+}
+.contact-table td {
+padding: 12px;
+border-bottom: 1px solid #eee;
+}  
+.contact-table i {
+font-size: 1.5rem;
+color: var(--primary);
+width: 30px;
+}   
+.contact-table a {
+color: var(--secondary);
+text-decoration: none;
+}    
+.contact-table a:hover {
+color: var(--primary);
+}
+/* ========== ESTILOS DA TABELA ========== */
+table {
+border-collapse: separate;
+border-spacing: 0 15px; /* Espaço entre linhas */
+margin: 30px 0;
+background: transparent;
+}
+th {
+background: var(--dark)!important;
+color: white;
+font-size: 1.1em;
+padding: 18px 25px !important;
+letter-spacing: 1px;
+position: sticky;
+top: 70px;
+}
+td {
+padding: 18px 25px !important;
+background: #fff;
+box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+border: none !important;
+vertical-align: middle;
+}
+/* ========== SEÇÕES DE TEXTO ========== */
+.detalhes-conteudo h3 {
+margin: 35px 0 15px;
+padding-left: 15px;
+border-left: 4px solid var(--primary);
+color: var(--secondary);
+font-size: 1.3em;
+}
+.detalhes-conteudo p {
+line-height: 1.8;
+margin-bottom: 25px;
+padding-left: 20px;
+font-size: 1.05em;
+}
+/* ========== BOTÃO DE INSCRIÇÃO ========== */
+.cta-button {
+padding: 15px 40px !important;
+border-radius: 30px !important;
+background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+font-size: 1.05em;
+letter-spacing: 0.8px;
+margin-top: 25px;
+display: inline-flex;
+align-items: center;
+gap: 10px;
+}
+.cta-button::before {
+content: "\f15c";
+font-family: "Font Awesome 5 Free";
+font-weight: 900;
+}
+.cta-button:hover {
+transform: translateY(-3px) scale(1.02);
+box-shadow: 0 8px 20px rgba(240, 113, 9, 0.3) !important;
+}
+/* ========== MELHORIAS RESPONSIVAS ========== */
+@media (max-width: 768px) {
+th, td {
+padding: 14px 18px !important;
+font-size: 0.95em;
+}
+.detalhes-conteudo h3 {
+ font-size: 1.15em;
+}
+.cta-button {
+width: 100%;
+justify-content: center;
+}
+}
+
+
+.box-corporativo {
+background: linear-gradient(145deg, var(--primary), #e65c00);
+color: white;
+padding: 30px;
+border-radius: 15px;
+margin: 30px 0;
+box-shadow: 0 8px 25px rgba(240, 113, 9, 0.2);
+}
+.valores-lista {
+columns: 2;
+gap: 40px;
+margin-top: 25px;
+}
+.valores-lista li {
+padding: 15px;
+background: rgba(255,255,255,0.1);
+border-radius: 8px;
+margin-bottom: 15px;
+display: flex;
+align-items: center;
+gap: 15px;
+}
+.pilar-item {
+background: white;
+padding: 30px;
+border-radius: 15px;
+transition: all 0.3s ease;
+border: 2px solid var(--primary);
+}
+.pilar-item i {
+font-size: 3rem;
+color: var(--primary);
+margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+.nossa-historia h2 {
+font-size: 2rem;
+} 
+.valores-lista {
+columns: 1;
+}
+.pilares-grid {
+grid-template-columns: 1fr;
+}
+}
+
+/* Adicionais */
+.diretora-mensagem {
+display: flex;
+gap: 30px;
+align-items: center;
+background: var(--gray);
+padding: 30px;
+border-radius: 15px;
+margin-top: 40px;
+}
+.diretora-foto img {
+width: 200px;
+border-radius: 50%;
+border: 4px solid var(--primary);
+}
+blockquote {
+font-style: italic;
+font-size: 1.2em;
+line-height: 1.6;
+}
+cite {
+display: block;
+margin-top: 15px;
+font-weight: bold;
+color: var(--primary);
+}
+.missao-visao h3 {
+margin: 25px 0;
+display: flex;
+align-items: center;
+gap: 15px;
+color: var(--primary-dark);
+}
+.valores-container h3 {
+font-size: 1.5em;
+margin: 40px 0 25px;
+color: #fff;
+}
+/*para centralizar a frase de baixo do Nossos Cursos*/
+.centro {
+text-align: center;
+margin: 1rem auto;
+max-width: 800px;
+}
+
+.section-subtitle {
+font-size: 1.5em;
+color: var(--text);
+margin-bottom: 40px;
+}
+
+
+/*Faz com que a tabela suma e que seja subetituida pala de detalhes
+Controla a visibilidade */
+#courses {
+transition: opacity 0.3s ease; /* Animação suave */
+}
+
+#courses.hidden {
+display: none; /* Oculta completamente */
+opacity: 0;
+pointer-events: none; /* Impede interação */
+}
+
+#curso-detalhes {
+display: none; /* Começa oculto */
+margin-top: 40px;
+}
+
+
+/* Oculta a tabela */
+#courses.hidden {
+display: none;
+opacity: 0;
+}
+
+/* Exibe detalhes */
+#curso-detalhes.visible {
+display: block !important; 
+opacity: 1;
+}
+
+/* Transição suave (opcional) */
+#courses, #curso-detalhes {
+transition: opacity 0.3s ease;
+}
+
+/* estilo extra para ficha de inscrição */
+.form-inscricao {
+display: flex;
+flex-direction: column;
+gap: 1.8rem;
+margin-top: 20px;
+}
+
+.input-group {
+display: flex;
+flex-direction: column;
+gap: 8px;
+margin-bottom: 1.5rem;
+}
+
+.input-group label {
+font-weight: 600;
+color: var(--secondary);
+font-size: 1.1rem;
+}
+
+.input-group input {
+padding: 14px;
+border: 2px solid #eee;
+border-radius: 8px;
+transition: all 0.3s;
+font-size: 1rem;
+}
+
+.input-group input:focus {
+border-color: var(--primary);
+outline: none;
+}
+/* Estilização dos Radio Buttons */
+.radio-group {
+display: flex;
+gap: 20px;
+margin-top: 8px;
+}
+
+.radio-group label {
+display: flex;
+align-items: center;
+gap: 8px;
+font-weight: normal;
+}
+
+input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+}
+
+
+.curso-info {
+display: flex;
+align-items: center;
+gap: 10px;
+padding: 12px;
+background: var(--gray);
+border-radius: 8px;
+color: var(--secondary);
+}
+
+.curso-info i {
+color: var(--primary);
+font-size: 1.2rem;
+}
+
+.cta-button i {
+margin-right: 10px;
+}
+
+/* Validação */
+input:invalid {
+border-color: #ff4444;
+}
+
+input:valid {
+border-color: #00c851;
+}
+
+
+/* ========== MEDIA QUERIES PARA MOBILE ========== */
+@media (max-width: 768px) {
+/* Ajustes Gerais do Modal */
+.modal .box {
+width: 95%;
+padding: 20px;
+}
+
+/* Radio Groups - Empilhar Verticalmente */
+.radio-group {
+flex-direction: column;
+gap: 8px;
+}
+
+/* Ajuste de Campos de Entrada */
+.input-group input {
+font-size: 16px;
+padding: 14px;
+}
+
+/* Mensagem de Máximo de Cursos */
+.input-group small {
+display: block;
+text-align: center;
+margin-top: 8px;
+}
+
+/* Ajuste de Espaçamento entre Seções */
+.input-group {
+margin-bottom: 15px;
+}
+}
+
+/* Melhoria para Telas Muito Pequenas */
+@media (max-width: 480px) {
+/* Prefixo do Telefone Fixo */
+#telefone::before {
+content: "+244 ";
+color: #666;
+position: absolute;
+left: 15px;
+top: 50%;
+transform: translateY(-50%);
+pointer-events: none;
+}
+
+#telefone {
+padding-left: 85px !important; /* Espaço para o prefixo */
+}
+}
+.curso-info {
+background: var(--gray);
+padding: 12px;
+border-radius: 8px;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.curso-info i {
+color: var(--primary);
+font-size: 1.2rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .radio-group {
+    flex-direction: column;}
+}
+/* Estilo para texto de exemplo */
+.input-group small {
+  display: block;
+  color: #666;
+  font-size: 0.85em;
+  margin-top: 4px;
+}
+/* ========== TABELA DE CURSOS SIMPLIFICADA ========== */
+#courses {
+  overflow-x: auto;
+}
+
+.cursos-table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  margin: 30px 0;
+}
+
+.cursos-table th {
+  background: var(--dark);
+  color: white;
+  padding: 15px 20px;
+  text-align: left;
+  font-weight: 600;
+  position: sticky;
+  top: 70px;
+}
+
+.cursos-table td {
+  padding: 15px 20px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  vertical-align: middle;
+}
+
+.cursos-table tr:hover td {
+  background-color: #f9f9f9;
+}
+
+/* ========== HISTÓRIA EM TABELA ========== */
+.historia-container {
+  margin: 50px 0;
+  overflow-x: auto;
+}
+
+.historia-table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: separate;
+  border-spacing: 0 15px;
+  margin: 30px 0;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.historia-table th {
   background: var(--primary);
-  color: #fff;
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  color: white;
+  padding: 18px 25px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 1.2rem;
 }
 
-#inscricaoModal button:hover {
-  background: var(--primary-dark);
+.historia-table td {
+  padding: 20px 25px;
+  vertical-align: top;
+  border-bottom: 1px solid #eee;
+}
+
+.historia-table tr:last-child td {
+  border-bottom: none;
+}
+
+.historia-table .categoria {
+  font-weight: 600;
+  color: var(--secondary);
+  width: 25%;
+  min-width: 150px;
+}
+
+/* ========== RESPONSIVIDADE ========== */
+@media (max-width: 768px) {
+  .cursos-table, .historia-table {
+    min-width: 100%;
+    font-size: 0.9rem;
+  }
+  
+  .cursos-table th, 
+  .cursos-table td,
+  .historia-table th,
+  .historia-table td {
+    padding: 12px 15px;
+  }
+  
+  .historia-table .categoria {
+    width: 30%;
+  }
+
+ .historia-table .conteudo {
+    width: 70%;
+  }
+  
+  .detalhes-conteudo h3 {
+    font-size: 1.15em;
+  }
+  
+  .cta-button {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  #about .inner {
+    flex-direction: column;
+  }
+  
+  #about .text, #about .img {
+    flex: none;
+    width: 100%;
+  }
 }
