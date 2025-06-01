@@ -1,225 +1,294 @@
-// ========== FUNÇÕES DE NAVEGAÇÃO ========== //
-function showPage(pageId) {
-    document.querySelectorAll('.page').forEach(page => {
-        page.classList.remove('active');
-    });
-    
-    setTimeout(() => {
-        document.getElementById(pageId).classList.add('active');
-    }, 50);
+// Dados dos Cursos (Exemplo)
+const cursos = [
+{
+nome: 'Contabilidade',
+dur: '170 horas',
+inv: '350.000 Kz',
+hr: 'Sexta e Sábado às 18h',
+mod: 'Presencial',
+objetivos: 'Capacitar profissionais em técnicas modernas de gestão corporativa',
+destinatarios: 'Gestores, empreendedores e administradores',
+regime: 'Pós-Laboral',
+Material: 'Apostilas digitais, casos práticos e certificado'
+},
+{
+nome: 'Fiscalidade',
+dur: '80 horas',
+inv: '280.000 Kz',
+hr: 'Sexta e Sábado às 18h',
+mod: 'Online',
+objetivos: 'Dominar a legislação tributária angolana',
+destinatarios: 'Advogados, contadores e gestores financeiros',
+regime: 'Flexível',
+Material: 'Videoaulas, material PDF e suporte online'
+},
+{
+nome: 'Gestão de Portais',
+dur: '30 horas',
+inv: '250.000 Kz',
+hr: 'Sexta e Sábado às 18h',
+mod: 'Presencial',
+objetivos: 'Dominar estratégias digitais para negócios',
+destinatarios: 'Empreendedores e profissionais de marketing',
+regime: 'Intensivo',
+Material: 'Kit de ferramentas e certificado'
+},
+{
+nome: 'Gestão Financeira',
+dur: '30 horas',
+inv: '300.000 Kz',
+hr: 'Sexta e Sábado às 18h',
+mod: 'Híbrido',
+objetivos: 'Formar especialistas em gestão de pessoas',
+destinatarios: 'Profissionais de RH e gestores',
+regime: 'Pós-Laboral',
+Material: 'Casos práticos e simuladores'
+},
+{
+nome: 'Legislação Laboral e Instrução de Processos',
+dur: '50 horas',
+inv: '270.000 Kz',
+hr: 'Sexta e Sábado às 18h',
+mod: 'Online',
+objetivos: 'Prática contábil conforme normas internacionais',
+destinatarios: 'Contabilistas e gestores financeiros',
+Material: 'Planilhas modelo e videoaulas'
+},
+{
+nome: 'Mercado Financeiro',
+dur: '40 horas',
+inv: '310.000 Kz',
+hr: 'Sexta e Sábado às 18h',
+mod: 'Híbrido',
+objetivos: 'Metodologias ágeis e tradicionais',
+destinatarios: 'Gestores e coordenadores de projetos',
+Material: 'Certificação PMP preparatória'
+},
+{
+nome: 'Procedimentos do Código do Imposto sobre o Rendimento do Trabalho',
+dur: '30 horas',
+inv: '290.000 Kz',
+hr: 'Sexta e Sábado às 18h',
+mod: 'Presencial',
+objetivos: 'Legislação trabalhista angolana',
+destinatarios: 'Profissionais de RH e advogados',
+Material: 'Código do trabalho atualizado'
+},
+{
+nome: 'Procedimentos sobre Insolvência, recuperação de Crédito e Doação em Pagamento',
+dur: '20 horas',
+inv: '330.000 Kz',
+hr: 'Sexta e Sábado às 18h',
+mod: 'Online',
+objetivos: 'Estratégias de tráfego pago e SEO',
+destinatarios: 'Profissionais de marketing digital',
+Material: 'Ferramentas premium de análise'
+},
+{
+nome: 'Sistema Tributário',
+dur: '60 horas',
+inv: '240.000 Kz',
+hr: 'Sexta e Sábado às 18h',
+mod: 'Híbrido',
+objetivos: 'Criação de conteúdo viral',
+destinatarios: 'Social media managers',
+Material: 'Kit de templates editáveis'
+}
+];
+
+// Preencher Tabela
+const tbody = document.getElementById('cursos-body');
+cursos.forEach((curso, index) => {
+const tr = document.createElement('tr');
+tr.innerHTML = `
+<td>${curso.nome}</td>
+<td>${curso.dur}</td>
+<td>${curso.hr}</td>
+<td><button class="table-cta" onclick="showDetails(${index})">Detalhes</button></td>
+`;
+tbody.appendChild(tr);
+});
+
+// Mostrar Detalhes
+function showDetails(index) {
+const curso = cursos[index];
+document.getElementById('courses').classList.add('hidden');
+document.getElementById('curso-detalhes').classList.add('visible'); 
+document.getElementById('detalhe-titulo').textContent = curso.nome;
+document.getElementById('detalhe-modalidade').textContent = curso.mod;
+document.getElementById('detalhe-duracao').textContent = curso.dur;
+document.getElementById('detalhe-horario').textContent = curso.hr;
+document.getElementById('detalhe-investimento').textContent = curso.inv;
+document.getElementById('detalhe-objetivos').textContent = curso.objetivos;
+document.getElementById('detalhe-destinatarios').textContent = curso.destinatarios;
+document.getElementById('detalhe-material').textContent = curso.Material;
+history.pushState({ cursoIndex: index }, '', `#curso-${index}`);
 }
 
-// ========== GERENCIAMENTO DE MODAL ========== //
-function openModal() {
-    document.getElementById("contactModal").style.display = "flex";
-    document.body.style.overflow = "hidden";
+// Voltar para Cursos
+function voltarParaCursos() {
+document.getElementById('courses').classList.remove('hidden');
+document.getElementById('curso-detalhes').classList.remove('visible');
+window.scrollTo({ top: document.getElementById('courses').offsetTop - 70, behavior: 'smooth'});
 }
 
-function closeModal() {
-    document.getElementById("contactModal").style.display = "none";
-    document.body.style.overflow = "auto";
+// Gerenciar Histórico
+window.addEventListener('popstate', (event) => {
+if (event.state?.cursoIndex !== undefined) {
+showDetails(event.state.cursoIndex);
+} else {
+voltarParaCursos();
+}
+});
+
+// Formulário
+function openInscricao() {
+document.getElementById('inscricaoModal').style.display = 'flex';
+}
+function fecharModal() {
+document.getElementById('inscricaoModal').style.display = 'none';
+}
+document.getElementById('form-inscricao').addEventListener('submit', (e) => {
+e.preventDefault();
+const curso = document.getElementById('nome-curso').textContent;
+alert(`Inscrição em "${curso}" confirmada!\nDados enviados com sucesso.`);
+fecharModal();
+});
+// Menu Mobile 
+document.querySelector('.mobile-menu').addEventListener('click', () => {
+const menu = document.querySelector('nav ul');
+menu.classList.toggle('active');
+
+// Fechar ao clicar em qualquer item
+document.querySelectorAll('nav ul li a').forEach(item => {
+item.addEventListener('click', () => {
+menu.classList.remove('active');
+});
+});
+});
+
+// Pega o nome do curso ativo 
+function openInscricao() {
+const curso = cursos.find(c => c.nome === document.getElementById('detalhe-titulo').textContent);
+document.getElementById('nome-curso').textContent = curso.nome;
+document.getElementById('investimento-curso').textContent = curso.inv;
+document.getElementById('inscricaoModal').style.display = 'flex';
 }
 
-// ========== FUNÇÕES DO MENU ========== //
-function toggleMenu() {
-    const menu = document.querySelector('.side-menu');
-    const overlay = document.querySelector('.menu-overlay');
-    
-    menu.classList.toggle('active');
-    overlay.style.display = menu.classList.contains('active') ? 'block' : 'none';
-    document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : 'auto';
+// Controle do Modal de Contato
+const contactModal = document.getElementById('contactModal');
+const closeModalBtn = document.querySelector('.close-modal');
+
+// Abrir modal do CTA "Fale Conosco"
+document.querySelector('a[href="#contact"]').addEventListener('click', (e) => {
+e.preventDefault();
+contactModal.style.display = 'flex';
+});
+
+// Fechar modal
+closeModalBtn.addEventListener('click', () => {
+contactModal.style.display = 'none';
+});
+
+// Fechar ao clicar fora
+window.addEventListener('click', (e) => {
+if (e.target === contactModal) {
+contactModal.style.display = 'none';
+}
+});
+//Função Toggle (controla a Historia se esta visivel ou oculta)
+function toggleHistoria() {
+const historia = document.querySelector('.nossa-historia-container');
+  
+// Alternar classe 'visible'
+historia.classList.toggle('visible');
+  
+// Rolagem suave para a seção
+if (historia.classList.contains('visible')) {
+historia.scrollIntoView({
+behavior: 'smooth',
+block: 'start'
+});
+}
 }
 
-// ========== LISTENERS GLOBAIS ========== //
+// Fechar ao clicar fora
+document.addEventListener('click', (e) => {
+const historia = document.querySelector('.nossa-historia-container');
+const botao = document.querySelector('#about .cta-button');  
+
+if (!historia.contains(e.target) && e.target !== botao) {
+historia.classList.remove('visible');
+}
+});
+
+const telefoneInput = document.getElementById('telefone');
+telefoneInput.addEventListener('input', function (e) {
+// Remove o prefixo +244 e todos os caracteres não numéricos
+let numero = e.target.value.replace('+244', '').replace(/\D/g, '');
+
+// Limita a 9 dígitos (sem o +244)
+numero = numero.substring(0, 9);
+
+// Reaplica a formatação com prefixo
+let formatado = '+244 ';
+for (let i = 0; i < numero.length; i++) {
+if (i === 3 || i === 6) formatado += ' ';
+formatado += numero.charAt(i);
+}
+e.target.value = formatado.trim();
+});
+
+// Impede entrada de letras, mas permite backspace e setas
+telefoneInput.addEventListener('keydown', function (e) {
+if (
+!/[0-9]/.test(e.key) &&
+e.key !== 'Backspace' &&
+e.key !== 'ArrowLeft' &&
+e.key !== 'ArrowRight' &&
+e.key !== 'Tab'
+) {
+e.preventDefault();
+}
+});
+
+// Validação de Telefone
+document.getElementById('telefone').addEventListener('input', function(e) {
+let numero = e.target.value.replace(/\D/g, '').substring(3); // Remove +244 e não numéricos
+numero = numero.substring(0, 9); // Limita a 9 dígitos
+let formatado = '+244 ';
+for (let i = 0; i < numero.length; i++) {
+if (i === 3 || i === 6) formatado += ' ';
+formatado += numero.charAt(i);
+}
+e.target.value = formatado;
+});
+
+// Inicializar ao abrir o modal
+function openInscricao() {
+const cursoNome = document.getElementById('detalhe-titulo').textContent;
+document.getElementById('nome-curso').textContent = cursoNome; // Novo
+document.getElementById('inscricaoModal').style.display = 'flex';
+}
+
+// Impedir zoom em inputs
 document.addEventListener('DOMContentLoaded', function() {
-    // Fechar modal ao clicar fora
-    window.onclick = function(event) {
-        const modal = document.getElementById('contactModal');
-        if (event.target == modal) {
-            closeModal();
-        }
-    };
-
-    // Fechar menu ao redimensionar para desktop
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 768) {
-            document.querySelector('.side-menu').classList.remove('active');
-            document.querySelector('.menu-overlay').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-    });
-
-    // Navegação entre páginas
-    document.querySelectorAll('.nav-buttons button:not(.contact-header-btn)').forEach(button => {
-        button.addEventListener('click', function() {
-            const targetPage = this.getAttribute('onclick').replace("showPage('", "").replace("')", "");
-            showPage(targetPage);
-        });
-    });
-
-    // Navegação no menu lateral
-    document.querySelectorAll('.side-menu a').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetPage = this.getAttribute('onclick').split("'")[1];
-            showPage(targetPage);
-            toggleMenu(); // Fecha o menu após seleção
-        });
-    });
+document.querySelectorAll('input, select').forEach(element => {
+element.addEventListener('focus', () => {
+document.querySelector('meta[name="viewport"]').content = 'width=device-width, initial-scale=1.0';
+});
+    
+element.addEventListener('blur', () => {
+document.querySelector('meta[name="viewport"]').content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0';
+});
+});
 });
 
-// ========== GERADOR DE FICHA DE INSCRIÇÃO ========== //
-function gerarFichaInscricao() {
-    const form = document.forms['formulario-inscricao'];
-    
-    // Verificação básica de campos obrigatórios
-    if (!form.nomeCompleto.value || !form.email.value || !form.telefoneMovel.value) {
-        alert('Por favor, preencha os campos obrigatórios (Nome, Email e Telefone Móvel)');
-        return;
-    }
-
-    const escapeHtml = (unsafe) => {
-        return unsafe ? unsafe.toString().replace(/[&<"'>]/g, (m) => ({
-            '&': '&amp;',
-            '<': '&lt;',
-            '>': '&gt;',
-            '"': '&quot;',
-            "'": '&#39;'
-        })[m]) : '';
-    };
-
-    const formatField = (value) => value ? escapeHtml(value) : 'Não informado';
-
-    document.getElementById('pdf-content-inscricao').innerHTML = `
-        <div style="padding: 2cm; font-family: Arial, sans-serif;">
-            <div style="text-align: center;">
-                <img src="https://via.placeholder.com/150x50?text=IAKUTA+LOGO" style="width: 150px; margin-bottom: 10px;">
-                <h1 style="color: orange; font-size: 24px;">IAKUTA KNOWLEDGE - Academia de Gestão & Direito</h1>
-                <p style="font-size: 12px;">Rua Paiva Couceiro, n.º 81, Bairro Cruzeiro, Luanda</p>
-                <p style="font-size: 12px;">Email: iakuta.informacoes@gmail.com | Telefones: 959 407 323 / 932 682 027</p>
-                <hr style="margin: 20px 0;">
-                <h2 style="color: orange;">Ficha de Inscrição para Formandos</h2>
-            </div>
-
-            <div style="font-size: 14px; line-height: 1.6;">
-                <h3 style="color: orange;">Dados Pessoais</h3>
-                <p><strong>Nome:</strong> ${formatField(form.nomeCompleto.value)}</p>
-                <p><strong>Sexo:</strong> ${formatField(form.sexo.value)}</p>
-                <p><strong>Nacionalidade:</strong> ${formatField(form.nacionalidade.value)}</p>
-                <p><strong>BI/NIF:</strong> ${formatField(form.biNif.value)}</p>
-                <p><strong>Telefone (Móvel):</strong> ${formatField(form.telefoneMovel.value)}</p>
-                <p><strong>Telefone (Fixo):</strong> ${formatField(form.telefoneFixo.value)}</p>
-                <p><strong>Email:</strong> ${formatField(form.email.value)}</p>
-                <p><strong>Cidade:</strong> ${formatField(form.cidade.value)}</p>
-                <p><strong>Província:</strong> ${formatField(form.provincia.value)}</p>
-
-                <hr style="margin: 20px 0;">
-
-                <h3 style="color: orange;">Informações Acadêmicas</h3>
-                <p><strong>Escolaridade:</strong> ${formatField(form.escolaridade.value)}</p>
-                <p><strong>Área de Formação:</strong> ${formatField(form.areaFormacao.value)}</p>
-
-                <hr style="margin: 20px 0;">
-
-                <h3 style="color: orange;">Cursos de Interesse</h3>
-                <p>${[
-                    form.curso1.value,
-                    form.curso2.value,
-                    form.curso3.value,
-                    form.curso5.value,
-                    form.curso6.value,
-                    form.curso7.value
-                ].filter(c => c).join(', ')}</p>
-
-                <p><strong>Horário:</strong> ${formatField(form.horario.value)}</p>
-                <p><strong>Período:</strong> ${formatField(form.periodo.value)}</p>
-                <p><strong>Horas por Dia:</strong> ${formatField(form.horasDia.value)}</p>
-                <p><strong>Modalidade:</strong> ${formatField(form.modalidade.value)}</p>
-
-                <hr style="margin: 20px 0;">
-
-                <h3 style="color: orange;">Método de Pagamento</h3>
-                <p>${formatField(form.metodoPagamento.value)}</p>
-
-                <hr style="margin: 20px 0;">
-
-                <h3 style="color: orange;">Autorização</h3>
-                <p>Declaro que todas as informações acima são verdadeiras e autorizo o uso dos meus dados para fins administrativos e acadêmicos.</p>
-                
-                <div style="margin-top: 50px; text-align: right;">
-                    <p>_________________________________</p>
-                    <p>Assinatura do Formando</p>
-                </div>
-            </div>
-        </div>
-    `;
-
-    // Mostra o preview do PDF
-    showPage('pdf-preview-page');
-}
-
-// ========== GERADOR DE PDF ========== //
-function gerarPDF() {
-    const element = document.getElementById('pdf-content-inscricao');
-    
-    const opt = {
-        margin:       10,
-        filename:     'ficha_inscricao_iakuta.pdf',
-        image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  { scale: 2 },
-        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
-    };
-
-    html2pdf().from(element).set(opt).save();
-}
-
-// ========== ENVIO DO FORMULÁRIO DE CONTATO ========== //
-document.getElementById("iakuta-form-modal").addEventListener("submit", function(e) {
-    e.preventDefault();
-    
-    const form = e.target;
-    const button = form.querySelector("button[type=submit]");
-    
-    button.disabled = true;
-    button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
-
-    const formData = {
-        nome: form.nome.value,
-        email: form.email.value,
-        mensagem: form.mensagem.value
-    };
-
-    const API_URL = "https://script.google.com/macros/s/AKfycbznh5NK4VZ2QzClmqkNJQ1pYX12rHY0609KXhjsyezrHUdJn2KLgnypennIjpecIRNxwQ/exec";
-    
-    fetch(API_URL, {
-        method: "POST",
-        body: JSON.stringify(formData),
-        headers: { "Content-Type": "application/json" }
-    })
-    .then(response => {
-        if (!response.ok) throw new Error("Erro na rede");
-        return response.text();
-    })
-    .then(result => {
-        alert("✔ Mensagem enviada com sucesso!");
-        form.reset();
-        closeModal();
-    })
-    .catch(error => {
-        alert("✖ Erro ao enviar. Tente novamente ou contate-nos pelas redes sociais.");
-        console.error("Erro:", error);
-    })
-    .finally(() => {
-        button.disabled = false;
-        button.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar Mensagem';
-    });
-});
-// Adicione este código ao seu script existente
+// Fechar teclado virtual ao rolar
 window.addEventListener('scroll', function() {
-    const header = document.querySelector('header');
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
+document.activeElement.blur();
 });
+
+// Substituir o ano estático no rodapé para o ano atual
+document.querySelector('.copyright p').innerHTML = 
+`&copy; ${new Date().getFullYear()} iAKUTA Knowledge Academia. Todos os direitos reservados.`;
