@@ -57,7 +57,7 @@ padding:16px 20px; z-index:1000;
 
  /* Logo */
 .logo img {
-height: 80px;
+height: 60px;
 }
 
 /* Menu principal/Navegação principal */
@@ -931,131 +931,145 @@ font-size: 1.2rem;
 
 /* Responsivo */
 @media (max-width: 768px) {
-  .radio-group {
-    flex-direction: column;}
+.radio-group {
+flex-direction: column;}
 }
 /* Estilo para texto de exemplo */
 .input-group small {
-  display: block;
-  color: #666;
-  font-size: 0.85em;
-  margin-top: 4px;
+display: block;
+color: #666;
+font-size: 0.85em;
+margin-top: 4px;
 }
 /* ========== TABELA DE CURSOS SIMPLIFICADA ========== */
 #courses {
-  overflow-x: auto;
+overflow-x: auto;
 }
 
 .cursos-table {
-  width: 100%;
-  min-width: 600px;
-  border-collapse: separate;
-  border-spacing: 0 10px;
-  margin: 30px 0;
+width: 100%;
+min-width: 600px;
+border-collapse: separate;
+border-spacing: 0 10px;
+margin: 30px 0;
 }
 
 .cursos-table th {
-  background: var(--dark);
-  color: white;
-  padding: 15px 20px;
-  text-align: left;
-  font-weight: 600;
-  position: sticky;
-  top: 70px;
+background: var(--dark);
+color: white;
+padding: 15px 20px;
+text-align: left;
+font-weight: 600;
+position: sticky;
+top: 70px;
 }
 
 .cursos-table td {
-  padding: 15px 20px;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  vertical-align: middle;
+padding: 15px 20px;
+background: #fff;
+box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+vertical-align: middle;
 }
 
-.cursos-table tr:hover td {
-  background-color: #f9f9f9;
-}
+.cursos-table tr:hover td { background-color: #f9f9f9; }
 
 /* ========== HISTÓRIA EM TABELA ========== */
-.historia-container {
-  margin: 50px 0;
-  overflow-x: auto;
-}
+.historia-container { margin: 50px 0; overflow-x: auto; }
 
 .historia-table {
-  width: 100%;
-  min-width: 600px;
-  border-collapse: separate;
-  border-spacing: 0 15px;
-  margin: 30px 0;
-  background: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+width: 100%;
+min-width: 600px;
+border-collapse: separate;
+border-spacing: 0 15px;
+margin: 30px 0;
+background: #fff;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 .historia-table th {
-  background: var(--primary);
-  color: white;
-  padding: 18px 25px;
-  text-align: left;
-  font-weight: 600;
-  font-size: 1.2rem;
+background: var(--primary);
+color: white;
+padding: 18px 25px;
+text-align: left;
+font-weight: 600;
+font-size: 1.2rem;
 }
 
 .historia-table td {
-  padding: 20px 25px;
-  vertical-align: top;
-  border-bottom: 1px solid #eee;
+padding: 20px 25px;
+vertical-align: top;
+border-bottom: 1px solid #eee;
 }
 
-.historia-table tr:last-child td {
-  border-bottom: none;
-}
+.historia-table tr:last-child td { border-bottom: none; }
 
 .historia-table .categoria {
-  font-weight: 600;
-  color: var(--secondary);
-  width: 25%;
-  min-width: 150px;
+font-weight: 600;
+color: var(--secondary);
+width: 25%;
+min-width: 150px;
 }
 
 /* ========== RESPONSIVIDADE ========== */
 @media (max-width: 768px) {
-  .cursos-table, .historia-table {
-    min-width: 100%;
-    font-size: 0.9rem;
-  }
+.cursos-table, .historia-table { min-width: 100%; font-size: 0.9rem; }
   
-  .cursos-table th, 
-  .cursos-table td,
-  .historia-table th,
-  .historia-table td {
-    padding: 12px 15px;
-  }
+.cursos-table th, 
+.cursos-table td,
+.historia-table th,
+.historia-table td { padding: 12px 15px; }
   
-  .historia-table .categoria {
-    width: 30%;
-  }
+.historia-table .categoria { width: 30%; }
 
- .historia-table .conteudo {
-    width: 70%;
-  }
+.historia-table .conteudo { width: 70%; }
   
-  .detalhes-conteudo h3 {
-    font-size: 1.15em;
-  }
+.detalhes-conteudo h3 { font-size: 1.15em; }
   
-  .cta-button {
-    width: 100%;
-    justify-content: center;
-  }
+.cta-button { width: 100%; justify-content: center; }
   
-  #about .inner {
-    flex-direction: column;
-  }
+#about .inner { flex-direction: column; }
   
-  #about .text, #about .img {
-    flex: none;
-    width: 100%;
-  }
+#about .text, #about .img { flex: none; width: 100%;}
 }
+
+/*HISTORIA MAIS ESTILIZADA*/
+.historia-modernizada {
+padding: 60px 20px;
+}
+
+.historia-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 30px;
+}
+
+.bloco-info {
+background: #fff;
+border-left: 5px solid var(--primary);
+padding: 20px 25px;
+border-radius: 8px;
+box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.bloco-info h4 {
+font-size: 1.3rem;
+color: var(--primary);
+margin-bottom: 10px;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.bloco-info ul {
+list-style: disc inside;
+margin-top: 10px; 
+padding-left: 0;
+}
+
+.valores-lista li {
+margin-bottom: 6px;
+color: var(--text);
+}
+
