@@ -1,17 +1,18 @@
-
 // Dados dos Cursos (Exemplo)
 const cursos = [
 {
 nome: 'Contabilidade',
 dur: '170 horas',
-inv: `
+inv:["135 000,00 Kz","162 000,00 Kz","81 000,00 Kz"],
+invHTML: `
 <ul>
-<li>135 000,00 Kz</li>
-<li>162 000,00 Kz</li>
-<li>81 000,00 Kz</li>
+<li>135 000,00 Kz</li>
+<li>162 000,00 Kz</li>
+<li>81 000,00 Kz</li>
 </ul>
 `,
-hr: 'Sexta e Sábado às 18h',
+
+hr: 'Segunda a Sábado  das 8h as 18h',
 mod: `
 <ul>
 <li>Presencial</li>
@@ -22,16 +23,17 @@ mod: `
 objetivos: 'Capacitar profissionais em técnicas modernas de gestão corporativa',
 destinatarios: 'Gestores, empreendedores e administradores',
 regime: 'Pós-Laboral',
-Material: 'Apostilas digitais, casos práticos e certificado'
+material: 'Apostilas digitais, casos práticos e certificado',
 },
 {
 nome: 'Fiscalidade',
 dur: '80 horas',
-inv: `
+inv:["115 000,00 Kz","138 000,00 Kz","69 000,00 Kz"],
+invHTML: `
 <ul>
-<li>115 000,00 Kz</li>
-<li>138 000,00 Kz</li>
-<li>69 000,00 Kz</li>
+<li>115 000,00 Kz</li>
+<li>138 000,00 Kz</li>
+<li>69 000,00 Kz</li>
 </ul>
 `,
 hr: 'Sexta e Sábado às 18h',
@@ -45,16 +47,17 @@ mod: `
 objetivos: 'Dominar a legislação tributária angolana',
 destinatarios: 'Advogados, contadores e gestores financeiros',
 regime: 'Flexível',
-Material: 'Videoaulas, material PDF e suporte online'
+material: 'Videoaulas, material PDF e suporte online',
 },
 {
 nome: 'Gestão de Portais',
 dur: '30 horas',
-inv: `
+inv: ["70 000,00 Kz","84 000,00 Kz","42 000,00 Kz"],
+invHTML: `
 <ul>
-<li>70 000,00 Kz</li>
-<li>84 000,00 Kz</li>
-<li>42 000,00 Kz</li>
+<li>70 000,00 Kz</li>
+<li>84 000,00 Kz</li>
+<li>42 000,00 Kz</li>
 </ul>
 `,
 hr: 'Sexta e Sábado às 18h',
@@ -68,16 +71,17 @@ mod: `
 objetivos: 'Dominar estratégias digitais para negócios',
 destinatarios: 'Empreendedores e profissionais de marketing',
 regime: 'Intensivo',
-Material: 'Kit de ferramentas e certificado'
+material: 'Kit de ferramentas e certificado'
 },
 {
 nome: 'Gestão Financeira',
 dur: '30 horas',
-inv: `
+inv:["110 000,00 Kz","132 000,00 Kz","66 000,00 Kz",],
+invHTML: `
 <ul>
-<li>110 000,00 Kz</li>
-<li>132 000,00 Kz</li>
-<li>66 000,00 Kz</li>
+<li>110 000,00 Kz</li>
+<li>132 000,00 Kz</li>
+<li>66 000,00 Kz</li>
 </ul>
 `,
 hr: 'Sexta e Sábado às 18h',
@@ -91,16 +95,17 @@ mod: `
 objetivos: 'Formar especialistas em gestão de pessoas',
 destinatarios: 'Profissionais de RH e gestores',
 regime: 'Pós-Laboral',
-Material: 'Casos práticos e simuladores'
+material: 'Casos práticos e simuladores'
 },
 {
 nome: 'Garantia, Exigências Legais e Processos Executivos',
 dur: '30 horas',
-inv: `
+inv:[ "350 000,00 Kz","420 000,00 Kz","210 000,00 Kz" ],
+invHTML: `
 <ul>
-<li>350 000,00 Kz</li>
-<li>420 000,00 Kz</li>
-<li>210 000,00 Kz</li>
+<li>350 000,00 Kz</li>
+<li>420 000,00 Kz</li>
+<li>210 000,00 Kz</li>
 </ul>
 `,
 hr: 'Sexta e Sábado às 18h',
@@ -114,16 +119,17 @@ mod: `
 objetivos: 'Formar especialistas em gestão de pessoas',
 destinatarios: 'Profissionais de RH e gestores',
 regime: 'Pós-Laboral',
-Material: 'Casos práticos e simuladores'
+material: 'Casos práticos e simuladores'
 },
 {
 nome: 'Legislação Laboral e Instrução de Processos',
 dur: '50 horas',
-inv: `
+inv:[ "90 000,00 Kz","108 000,00 Kz","54 000,00 Kz" ],
+invHTML: `
 <ul>
-<li>90 000,00 Kz</li>
-<li>108 000,00 Kz</li>
-<li>54 000,00 Kz</li>
+<li>90 000,00 Kz</li>
+<li>108 000,00 Kz</li>
+<li>54 000,00 Kz</li>
 </ul>
 `,
 hr: 'Sexta e Sábado às 18h',
@@ -136,15 +142,17 @@ mod: `
 `,
 objetivos: 'Prática contábil conforme normas internacionais',
 destinatarios: 'Contabilistas e gestores financeiros',
-Material: 'Planilhas modelo e videoaulas'
+regime:'Não confirmado',
+material: 'Planilhas modelo e videoaulas'
 },
 {
 nome: 'Mercado Financeiro',
 dur: '40 horas',
-inv: `
+inv:[ "120 000,00 Kz","144 000,00 Kz" ],
+invHTML: `
 <ul>
-<li>120 000,00 Kz</li>
-<li>144 000,00 Kz</li>
+<li>120 000,00 Kz</li>
+<li>144 000,00 Kz</li>
 </ul>
 `,
 hr: 'Sexta e Sábado às 18h',
@@ -156,16 +164,18 @@ mod: `
 `,
 objetivos: 'Metodologias ágeis e tradicionais',
 destinatarios: 'Gestores e coordenadores de projetos',
-Material: 'Certificação PMP preparatória'
+regime:'Não informado',
+material: 'Certificação PMP preparatória'
 },
 {
 nome: 'Procedimentos do Código do Imposto sobre o Rendimento do Trabalho',
 dur: '30 horas',
-inv: `
+inv: [ "90 000,00 Kz","108 000,00 Kz","54 000,00 Kz" ],
+invHTML: `
 <ul>
-<li>90 000,00 Kz</li>
-<li>108 000,00 Kz</li>
-<li>54 000,00 Kz</li>
+<li>90 000,00 Kz</li>
+<li>108 000,00 Kz</li>
+<li>54 000,00 Kz</li>
 </ul>
 `,
 hr: 'Sexta e Sábado às 18h',
@@ -178,16 +188,18 @@ mod: `
 `,
 objetivos: 'Legislação trabalhista angolana',
 destinatarios: 'Profissionais de RH e advogados',
-Material: 'Código do trabalho atualizado'
+regime:'Não informado',
+material: 'Código do trabalho atualizado'
 },
 {
 nome: 'Procedimentos sobre Insolvência, recuperação de Crédito e Doação em Pagamento',
 dur: '20 horas',
-inv: `
+inv:[ "350 000,00 Kz","420 000,00 Kz","210 000,00 Kz" ],
+invHTML: `
 <ul>
-<li>350 000,00 Kz</li>
-<li>420 000,00 Kz</li>
-<li>210 000,00 Kz</li>
+<li>350 000,00 Kz</li>
+<li>420 000,00 Kz</li>
+<li>210 000,00 Kz</li>
 </ul>
 `,
 hr: 'Sexta e Sábado às 18h',
@@ -200,16 +212,18 @@ mod: `
 `,
 objetivos: 'Estratégias de tráfego pago e SEO',
 destinatarios: 'Profissionais de marketing digital',
-Material: 'Ferramentas premium de análise'
+regime:'Não informado',
+material: 'Ferramentas premium de análise'
 },
 {
 nome: 'Recursos Humanos',
 dur: '60 horas',
-inv: `
+inv:[ "100 000,00 Kz","120 000,00 Kz","60 000,00 Kz" ],
+invHTML: `
 <ul>
-<li>100 000,00 Kz</li>
-<li>120 000,00 Kz</li>
-<li>60 000,00 Kz</li>
+<li>100 000,00 Kz</li>
+<li>120 000,00 Kz</li>
+<li>60 000,00 Kz</li>
 </ul>
 `,
 hr: 'Sexta e Sábado às 18h',
@@ -222,16 +236,18 @@ mod: `
 `,
 objetivos: 'Estratégias de tráfego pago e SEO',
 destinatarios: 'Profissionais de marketing digital',
-Material: 'Ferramentas premium de análise'
+regime:'Não informado',
+material: 'Ferramentas premium de análise'
 },
 {
 nome: 'Sistema Tributário',
 dur: '60 horas',
-inv: `
+inv: [ "100 000,00 Kz","120 000,00 Kz","60 000,00 Kz" ],
+invHTML: `
 <ul>
-<li>100 000,00 Kz</li>
-<li>120 000,00 Kz</li>
-<li>60 000,00 Kz</li>
+<li>100 000,00 Kz</li>
+<li>120 000,00 Kz</li>
+<li>60 000,00 Kz</li>
 </ul>
 `,
 hr: 'Sexta e Sábado às 18h',
@@ -244,7 +260,8 @@ mod: `
 `,
 objetivos: 'Criação de conteúdo viral',
 destinatarios: 'Social media managers',
-Material: 'Kit de templates editáveis'
+regime:'Não informado',
+material: 'Kit de templates editáveis'
 }
 ];
 
@@ -267,13 +284,14 @@ const curso = cursos[index];
 document.getElementById('courses').classList.add('hidden');
 document.getElementById('curso-detalhes').classList.add('visible'); 
 document.getElementById('detalhe-titulo').textContent = curso.nome;
-document.getElementById('detalhe-modalidade').innerHTML = curso.mod;
+document.getElementById('detalhe-objetivos').textContent = curso.objetivos;
 document.getElementById('detalhe-duracao').textContent = curso.dur;
 document.getElementById('detalhe-horario').textContent = curso.hr;
-document.getElementById('detalhe-investimento').innerHTML = curso.inv;
-document.getElementById('detalhe-objetivos').textContent = curso.objetivos;
+document.getElementById("detalhe-modalidade").innerHTML = curso.mod;
+document.getElementById('detalhe-investimento').innerHTML = curso.invHTML;
 document.getElementById('detalhe-destinatarios').textContent = curso.destinatarios;
-document.getElementById('detalhe-Material').textContent = curso.Material;
+document.getElementById('detalhe-material').textContent = curso.material;
+document.getElementById('detalhe-regime').textContent = curso.regime; 
 history.pushState({ cursoIndex: index }, '', `#curso-${index}`);
 }
 
@@ -303,6 +321,7 @@ const curso = document.getElementById('nome-curso').textContent;
 alert(`Inscrição em "${curso}" confirmada!\nDados enviados com sucesso.`);
 fecharModal();
 });
+
 // Menu Mobile 
 document.querySelector('.mobile-menu').addEventListener('click', () => {
 const menu = document.querySelector('nav ul');
@@ -400,6 +419,24 @@ e.target.value = formatado.trim();
 function openInscricao() {
 const cursoNome = document.getElementById('detalhe-titulo').textContent;
 document.getElementById('nome-curso').textContent = cursoNome;
+
+// Encontrar o curso pelo nome
+const curso = cursos.find(c => c.nome === cursoNome);
+const container = document.getElementById('investimento-opcoes');
+container.innerHTML = '';
+  
+if (curso && curso.inv) {
+curso.inv.forEach((opcao, index) => {
+const label = document.createElement('label');
+label.innerHTML = `
+<input type="radio" name="investimento" value="${opcao}" ${index === 0 ? 'checked' : ''} required>
+${opcao}
+`;
+container.appendChild(label);
+});
+}
+
+// Mostrar modal
 document.getElementById('inscricaoModal').style.display = 'flex';
 }
 
@@ -424,3 +461,4 @@ document.activeElement.blur();
 // Substituir o ano estático no rodapé para o ano atual
 document.querySelector('.copyright p').innerHTML = 
 `&copy; ${new Date().getFullYear()} iAKUTA Knowledge Academia. Todos os direitos reservados.`;
+
