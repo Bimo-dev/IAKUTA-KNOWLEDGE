@@ -13,6 +13,7 @@ padding: 0;
 box-sizing: border-box;
 font-family: 'Arial', sans-serif;
 }
+
 body {
 background: var(--light);
 color: var(--text);
@@ -334,6 +335,7 @@ box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 /*Garantir visibilidade inicial oculta da Historia*/
 .nossa-historia-container {
+display: none;
 opacity: 0;
 max-height: 0;
 overflow: hidden;
@@ -341,6 +343,7 @@ transition: all 0.5s ease-in-out;
 margin: 20px 0;
 }
 .nossa-historia-container.visible {
+display: block;
 opacity: 1;
 max-height: 5000px; /* Valor maior que o conteúdo real */
 padding: 20px 0;
@@ -1072,4 +1075,3 @@ padding-left: 0;
 margin-bottom: 6px;
 color: var(--text);
 }
-
