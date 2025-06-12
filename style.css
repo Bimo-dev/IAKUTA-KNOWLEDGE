@@ -1063,7 +1063,7 @@ display: block;
 }
 
 .close-showcase {
-background: #2c3e50;
+background: #f07109;
 color: white;
 border: none;
 padding: 10px 20px;
@@ -1121,13 +1121,13 @@ border-radius: 5px;
 font-weight: bold;
 }
 
-.future .year { background: #e74c3c; }
+.future .year { background: rgb(204, 38, 19); }
 
 /* Efeito de onda */
 .ripple-effect {
 position: fixed;
 border-radius: 50%;
-background: rgba(52, 152, 219, 0.3);
+background: #f07109;
 transform: translate(-50%, -50%);
 pointer-events: none;
 z-index: 999;
