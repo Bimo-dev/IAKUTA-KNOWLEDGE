@@ -276,96 +276,177 @@
 </ul>
 </div>
 </div>   
+
 <div class="contact-modal" id="contactModal">
 <div class="modal-content">
 <span class="close-modal">&times;</span>
-<h3>Nossos Canais de Contato</h3>
-<table class="contact-table">
-<tr>
-<td><i class="fab fa-whatsapp"></i></td>
-<td>
-<a href="https://wa.me/244959497323" target="_blank" class="whatsapp-link">
-+244 959 497 323
+        
+<div class="contact-header">
+<img src="imagens/iAKUTA_logo NOVO.png" alt="iAKUTA Logo" class="modal-logo">
+<h3>Fale Conosco</h3>
+<p>Estamos aqui para ajudar. Escolha o canal preferido:</p>
+</div>
+        
+<div class="contact-channels">
+            
+<!-- WhatsApp -->
+<div class="channel-card whatsapp">
+<div class="channel-icon">
+<i class="fab fa-whatsapp"></i>
+</div>
+<div class="channel-info">
+<h4>WhatsApp</h4>
+<a href="https://wa.me/244959497323" target="_blank" class="channel-link"> +244 959 497 323 </a>
+<p class="channel-desc">Atendimento rápido via mensagem</p>
+</div>
+<div class="channel-action">
+<a href="https://wa.me/244959497323" target="_blank" class="cta-button small">
+<i class="fab fa-whatsapp"></i> Enviar Mensagem
 </a>
-</td>
-</tr>
-<tr>
-<td><i class="fab fa-facebook"></i></td>
-<td><a href="https://www.facebook.com/profile.php?id=61573409081449" target="_blank">@iAKUTA</a></td>
-</tr>
-<tr>
-<td><i class="fab fa-instagram"></i></td>
-<td><a href="https://www.instagram.com/iakutaknowledgeacademia?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">@iAKUTA_oficial</a></td>
-</tr>
-<tr>
-<td><i class="fab fa-linkedin"></i></td>
-<td><a href="https://www.linkedin.com/in/iakuta-knowledge-academia-27aa0334a/" target="_blank">iAKUTA Knowledge Academia</a></td>
-</tr>
-<tr>
-<td><i class="fas fa-envelope"></i></td>
-<td><a href="mailto:iakuta.informacoes@gmail.com">iakuta.informacoes@gmail.com</a></td>
-</tr>
-</table>
 </div>
 </div>
+            
+<!-- Redes Sociais -->
+<div class="channel-card social">
+<div class="channel-icon">
+<i class="fas fa-share-alt"></i>
+</div>
+<div class="channel-info">
+<h4>Redes Sociais</h4>
+<div class="social-links">
+<a href="https://www.facebook.com/profile.php?id=61573409081449" target="_blank">
+<i class="fab fa-facebook-f"></i> @iAKUTA
+</a>
+<a href="https://www.instagram.com/iakutaknowledgeacademia" target="_blank">
+<i class="fab fa-instagram"></i> @iAKUTA_oficial
+</a>
+<a href="https://www.linkedin.com/in/iakuta-knowledge-academia-27aa0334a/" target="_blank">
+<i class="fab fa-linkedin-in"></i> iAKUTA Knowledge
+</a>
+</div>
+</div>
+</div>
+            
+<!-- E-mail -->
+<div class="channel-card email">
+<div class="channel-icon">
+<i class="fas fa-envelope"></i>
+</div>
+<div class="channel-info">
+<h4>E-mail</h4>
+<a href="mailto:iakuta.informacoes@gmail.com" class="channel-link"> iakuta.informacoes@gmail.com </a>
+<p class="channel-desc">Respondemos em até 24h úteis</p>
+</div>
+<div class="channel-action">
+<a href="mailto:iakuta.informacoes@gmail.com" class="cta-button small">
+<i class="fas fa-envelope"></i> Enviar E-mail
+</a>
+</div>
+</div>
+            
+<!-- Telefone -->
+<div class="channel-card phone">
+<div class="channel-icon">
+<i class="fas fa-phone-alt"></i>
+</div>
+<div class="channel-info">
+<h4>Telefone</h4>
+<a href="tel:+244959497323" class="channel-link"> +244 959 497 323 </a>
+<p class="channel-desc">Segunda a Sexta, 8h às 18h</p>
+</div>
+<div class="channel-action">
+<a href="tel:+244959497323" class="cta-button small">
+<i class="fas fa-phone"></i> Ligar Agora
+</a>
+</div>
+</div>
+</div>
+        
+<div class="contact-footer">
+<p><i class="fas fa-map-marker-alt"></i> Rua Paiva Couceiro nº. 81, Bairro Cruzeiro, Luanda, Angola</p>
+</div>
+</div>
+</div>
+
+<!-- se por o footer aqui a patye de baixo fica branca e nao interfere com o resto-->
 <div class="copyright">
 <p>&copy; 2023 iAKUTA Knowledge Academia. Todos os direitos reservados.</p>
 </div>
 </footer>
 
-<!-- Modal de Inscrição -->
+<!-- Modal de Inscrição (index.html) -->
 <div class="modal" id="inscricaoModal">
 <div class="box">
 <button class="close" onclick="fecharModal()">×</button>
 <h3>Formulário de Inscrição</h3>
     
 <form id="form-inscricao" class="form-inscricao">
-<!-- Nome Completo -->
+    
+<!-- Campos melhorados -->
 <div class="input-group">
 <label for="nome">Nome Completo</label>
 <input type="text" id="nome" placeholder="Ex: João da Silva" required>
 </div>
 
-<!-- E-mail -->
 <div class="input-group">
 <label for="email">E-mail</label>
 <input type="email" id="email" placeholder="Ex: joao@empresa.com" required>
 </div>
 
-<!-- Telefone com formatação automática -->
 <div class="input-group">
 <label for="telefone">Telefone</label>
-<input type="tel" id="telefone" placeholder="+244 900 000 000" pattern="\+244\s\d{3}\s\d{3}\s\d{3}" required>
+<div class="input-hint">Formato: +244 XXX XXX XXX</div>
+<input type="tel" id="telefone" pattern="\+244\s\d{3}\s\d{3}\s\d{3}" required>
 </div>
 
-<!-- Gênero (Radio Buttons) -->
+<!-- Gênero - Nova estrutura -->
 <div class="input-group">
 <label>Gênero</label>
-<div class="radio-group">
-<label><input type="radio" name="genero" value="Masculino" required> Masculino</label>
-<label><input type="radio" name="genero" value="Feminino"> Feminino</label>
+<div class="radio-group-grid">
+<label class="radio-option">
+<input type="radio" name="genero" value="Masculino" required>
+<span class="radio-custom"></span>
+<span>Masculino</span>
+</label>
+<label class="radio-option">
+<input type="radio" name="genero" value="Feminino">
+<span class="radio-custom"></span>
+<span>Feminino</span>
+</label>
 </div>
 </div>
 
-<!-- BI/NIF com validação -->
+<!-- BI/NIF com exemplo claro -->
 <div class="input-group">
 <label for="bi">BI/NIF</label>
-<input type="text" id="bi" pattern="[0-9]{9}[A-Za-z]{2}[0-9]{3}" 
-placeholder="Ex: 123456789LA123" required>
+<div class="input-hint">Ex: 123456789LA123</div>
+<input type="text" id="bi" pattern="[0-9]{9}[A-Za-z]{2}[0-9]{3}" required>
 </div>
 
-<!-- Nível de Escolaridade (Radio Buttons) -->
+<!-- Escolaridade - Nova estrutura -->
 <div class="input-group">
 <label>Nível de Escolaridade</label>
-<div class="radio-group">
-<label><input type="radio" name="escolaridade" value="Ensino Médio" required> Ensino Médio</label>
-<label><input type="radio" name="escolaridade" value="Ensino Superior"> Ensino Superior</label>
-<label><input type="radio" name="escolaridade" value="Outros"> Outros</label>
+<div class="radio-group-grid">
+<label class="radio-option">
+<input type="radio" name="escolaridade" value="Ensino Médio" required>
+<span class="radio-custom"></span>
+<span>Ensino Médio</span>
+</label>
+<label class="radio-option">
+<input type="radio" name="escolaridade" value="Ensino Superior">
+<span class="radio-custom"></span>
+<span>Ensino Superior</span>
+</label>
+<label class="radio-option">
+<input type="radio" name="escolaridade" value="Outros">
+<span class="radio-custom"></span>
+<span>Outros</span>
+</label>
 </div>
 </div>
 
-<!-- Seção: Curso -->
-<div class="input-group">
+<!-- Curso selecionado -->
+<div class="input-group">  
 <label>Curso Selecionado</label>
 <div class="curso-info">
 <i class="fas fa-book-open"></i>
@@ -373,10 +454,10 @@ placeholder="Ex: 123456789LA123" required>
 </div>
 </div>
 
-<!-- Seção: Investimento -->
-<div class="campo-investimento">
+<!-- Investimento - Cards clicáveis -->
+<div class="input-group">
 <label>💳 Escolha o Investimento</label>
-<div id="investimento-opcoes"></div>
+<div id="investimento-opcoes" class="investimento-opcoes"></div>
 </div>
 
 <button type="submit" class="cta-button">
