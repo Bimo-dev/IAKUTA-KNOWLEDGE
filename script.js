@@ -469,10 +469,10 @@ document.querySelector('meta[name="viewport"]').content = 'width=device-width, i
 });
 });
 
-// Fechar teclado virtual ao rolar
-window.addEventListener('scroll', function() {
-document.activeElement.blur();
-});
+//Fechar teclado virtual ao rolar
+//window.addEventListener('scroll', function() {
+//document.activeElement.blur();
+//});
 
 // Substituir o ano estático no rodapé para o ano atual
 document.querySelector('.copyright p').innerHTML = 
