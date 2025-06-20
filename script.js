@@ -3,7 +3,7 @@ const cursos = [
 {
 nome: 'Contabilidade',
 dur: '170 horas',
-inv:["135 000,00 Kz","162 000,00 Kz","81 000,00 Kz"],
+inv:["(Presencial) KZ 135 000,00 ","(Híbrido) KZ 162 000,00","(Online) KZ 81 000,00 "],
 invHTML: `
 <ul>
 <li>135 000,00 Kz</li>
@@ -28,7 +28,7 @@ material: 'Apostilas digitais, casos práticos e certificado',
 {
 nome: 'Fiscalidade',
 dur: '80 horas',
-inv:["115 000,00 Kz","138 000,00 Kz","69 000,00 Kz"],
+inv:["Presencial 115 000,00 Kz","Híbrido 138 000,00 Kz","Online 69 000,00 Kz"],
 invHTML: `
 <ul>
 <li>115 000,00 Kz</li>
@@ -52,7 +52,7 @@ material: 'Videoaulas, material PDF e suporte online',
 {
 nome: 'Gestão de Portais',
 dur: '30 horas',
-inv: ["70 000,00 Kz","84 000,00 Kz","42 000,00 Kz"],
+inv: ["Presencial 70 000,00 Kz","Híbrido 84 000,00 Kz","Online 42 000,00 Kz"],
 invHTML: `
 <ul>
 <li>70 000,00 Kz</li>
@@ -76,7 +76,7 @@ material: 'Kit de ferramentas e certificado'
 {
 nome: 'Gestão Financeira',
 dur: '30 horas',
-inv:["110 000,00 Kz","132 000,00 Kz","66 000,00 Kz",],
+inv:["Presencial 110 000,00 Kz","Híbrido 132 000,00 Kz","Online 66 000,00 Kz",],
 invHTML: `
 <ul>
 <li>110 000,00 Kz</li>
@@ -100,7 +100,7 @@ material: 'Casos práticos e simuladores'
 {
 nome: 'Garantia, Exigências Legais e Processos Executivos',
 dur: '30 horas',
-inv:[ "350 000,00 Kz","420 000,00 Kz","210 000,00 Kz" ],
+inv:[ "Presencial 350 000,00 Kz","Híbrido 420 000,00 Kz","Online 210 000,00 Kz" ],
 invHTML: `
 <ul>
 <li>350 000,00 Kz</li>
@@ -124,7 +124,7 @@ material: 'Casos práticos e simuladores'
 {
 nome: 'Legislação Laboral e Instrução de Processos',
 dur: '50 horas',
-inv:[ "90 000,00 Kz","108 000,00 Kz","54 000,00 Kz" ],
+inv:[ "Presencial 90 000,00 Kz","Híbrido 108 000,00 Kz","Online 54 000,00 Kz" ],
 invHTML: `
 <ul>
 <li>90 000,00 Kz</li>
@@ -148,7 +148,7 @@ material: 'Planilhas modelo e videoaulas'
 {
 nome: 'Mercado Financeiro',
 dur: '40 horas',
-inv:[ "120 000,00 Kz","144 000,00 Kz" ],
+inv:[ "Presencial 120 000,00 Kz","Online 144 000,00 Kz" ],
 invHTML: `
 <ul>
 <li>120 000,00 Kz</li>
@@ -170,7 +170,7 @@ material: 'Certificação PMP preparatória'
 {
 nome: 'Procedimentos do Código do Imposto sobre o Rendimento do Trabalho',
 dur: '30 horas',
-inv: [ "90 000,00 Kz","108 000,00 Kz","54 000,00 Kz" ],
+inv: [ "Presencial 90 000,00 Kz","Híbrido 108 000,00 Kz","Online 54 000,00 Kz" ],
 invHTML: `
 <ul>
 <li>90 000,00 Kz</li>
@@ -194,7 +194,7 @@ material: 'Código do trabalho atualizado'
 {
 nome: 'Procedimentos sobre Insolvência, recuperação de Crédito e Doação em Pagamento',
 dur: '20 horas',
-inv:[ "350 000,00 Kz","420 000,00 Kz","210 000,00 Kz" ],
+inv:[ "Presencial 350 000,00 Kz","Híbrido 420 000,00 Kz","Online 210 000,00 Kz" ],
 invHTML: `
 <ul>
 <li>350 000,00 Kz</li>
@@ -218,7 +218,7 @@ material: 'Ferramentas premium de análise'
 {
 nome: 'Recursos Humanos',
 dur: '60 horas',
-inv:[ "100 000,00 Kz","120 000,00 Kz","60 000,00 Kz" ],
+inv:[ "Presencial 100 000,00 Kz","Híbrido 120 000,00 Kz","Online 60 000,00 Kz" ],
 invHTML: `
 <ul>
 <li>100 000,00 Kz</li>
@@ -242,7 +242,7 @@ material: 'Ferramentas premium de análise'
 {
 nome: 'Sistema Tributário',
 dur: '60 horas',
-inv: [ "100 000,00 Kz","120 000,00 Kz","60 000,00 Kz" ],
+inv: [ "Presencial 100 000,00 Kz","Híbrido 120 000,00 Kz","Online 60 000,00 Kz" ],
 invHTML: `
 <ul>
 <li>100 000,00 Kz</li>
@@ -315,10 +315,38 @@ voltarParaCursos();
 function fecharModal() {
 document.getElementById('inscricaoModal').style.display = 'none';
 }
+
 document.getElementById('form-inscricao').addEventListener('submit', (e) => {
 e.preventDefault();
-const curso = document.getElementById('nome-curso').textContent;
-alert(`Inscrição em "${curso}" confirmada!\nDados enviados com sucesso.`);
+
+const investimentoSelecionado = document.querySelector('input[name="investimento"]:checked')?.value || '';
+const modalidadeExtraida = investimentoSelecionado.split(' ')[0]; // Pega a primeira palavra
+
+const dados = {
+nome: document.getElementById('nome').value,
+email: document.getElementById('email').value,
+telefone: document.getElementById('telefone').value,
+bi: document.getElementById('bi').value,
+genero: document.querySelector('input[name="genero"]:checked')?.value,
+escolaridade: document.querySelector('input[name="escolaridade"]:checked')?.value,
+curso: document.getElementById('nome-curso').textContent,
+investimento: investimentoSelecionado,
+modalidade: modalidadeExtraida,
+pagamento: document.querySelector('input[name="pagamento"]:checked')?.value || '-',
+
+// Extras
+nacionalidade: '',
+cidade: '',
+provincia: '',
+areaFormacao: '',
+profissao: '',
+atuacao: '',
+empresa: '',
+cargo: '',
+tempo: ''
+};
+
+gerarFichaPDF(dados);
 fecharModal();
 });
 
@@ -469,10 +497,10 @@ document.querySelector('meta[name="viewport"]').content = 'width=device-width, i
 });
 });
 
-//Fechar teclado virtual ao rolar
-//window.addEventListener('scroll', function() {
-//document.activeElement.blur();
-//});
+// Fechar teclado virtual ao rolar
+window.addEventListener('scroll', function() {
+document.activeElement.blur();
+});
 
 // Substituir o ano estático no rodapé para o ano atual
 document.querySelector('.copyright p').innerHTML = 
@@ -840,3 +868,185 @@ alert(`Código AKUTA${new Date().getFullYear()} aplicado!`);
 }, 300);
 });
 }
+
+//Função de gerar o pdf
+async function gerarPDF(dados) {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+
+  doc.setFontSize(12);
+  doc.text("IAKUTA KNOWLEDGE - ACADEMIA DE GESTÃO E DIREITO, LDA.", 10, 10);
+  doc.text("FICHA DE INSCRIÇÃO PARA FORMANDOS", 10, 20);
+
+  doc.setFontSize(10);
+  let y = 30;
+
+  doc.text("DADOS PESSOAIS", 10, y); y += 6;
+  doc.text(`Nome Completo: ${dados.nome}`, 10, y); y += 6;
+  doc.text(`Sexo: ${dados.genero || '-'}`, 10, y); y += 6;
+  doc.text(`BI/NIF: ${dados.bi}`, 10, y); y += 6;
+  doc.text(`Telefone (Móvel): ${dados.telefone}`, 10, y); y += 6;
+  doc.text(`E-mail: ${dados.email}`, 10, y); y += 6;
+ 
+
+  doc.text("INFORMAÇÕES ACADÊMICAS", 10, y); y += 6;
+  doc.text(`Nível de Escolaridade: ${dados.escolaridade}`, 10, y); y += 6;
+  doc.text(`Área de Formação: ${dados.areaFormacao || '-'}`, 10, y); y += 10;
+
+  doc.text("DADOS PROFISSIONAIS (se aplicável)", 10, y); y += 6;
+  doc.text(`Profissão: ${dados.profissao || '-'}`, 10, y); y += 6;
+  doc.text(`Área de Actuação: ${dados.atuacao || '-'}`, 10, y); y += 6;
+  doc.text(`Função: ${dados.cargo || '-'}`, 10, y); y += 6;
+  doc.text(`Experiência: ${dados.tempo || '-'}`, 10, y); y += 10;
+
+  doc.text("CURSO(S) DE INTERESSE", 10, y); y += 6;
+  doc.text(`Curso: ${dados.curso}`, 10, y); y += 6;
+  doc.text(`Investimento escolhido: ${dados.investimento}`, 10, y); y += 6;
+  doc.text(`Modalidade: ${dados.modalidade || '-'}`, 10, y); y += 10;
+
+  doc.text("MÉTODO DE PAGAMENTO", 10, y); y += 6;
+  doc.text(`Escolhido: ${dados.pagamento || '-'}`, 10, y); y += 10;
+
+  doc.text("DADOS DO PAGAMENTO", 10, y); y += 6;
+  doc.text("Nome do Titular: IAKUTA Knowledge – Academia de Gestão e Direito", 10, y); y += 6;
+  doc.text("Nº de Conta: 270.595.024.10001", 10, y); y += 6;
+  doc.text("IBAN: AO06.0040.0000.7059.5024.1014.7", 10, y); y += 10;
+
+  doc.text("AUTORIZAÇÃO E DECLARAÇÃO", 10, y); y += 6;
+  doc.text("Declaro que as informações fornecidas são verdadeiras e completas.", 10, y); y += 6;
+  doc.text("Autorizo o uso dos meus dados para fins administrativos e acadêmicos.", 10, y); y += 6;
+  doc.text("Comprometo-me a cumprir as normas da instituição.", 10, y); y += 10;
+  doc.text("Assinatura do Formando: ____________________________", 10, y); y += 6;
+  doc.text(`Data: ${new Date().toLocaleDateString()}`, 10, y);
+
+  doc.save(`Ficha_Inscricao_${dados.nome.replace(/\s/g, '_')}.pdf`);
+}
+
+// Supondo que jsPDF e autoTable estão incluídos:
+// <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+// <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+
+async function gerarFichaPDF(dados) {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+
+  const logoImg = await carregarLogo(); // Função que carrega o logo base64
+  if (logoImg) {
+    doc.addImage(logoImg, 'PNG', 10, 10, 30, 30);
+  }
+
+  doc.setFontSize(14);
+  doc.text("IAKUTA KNOWLEDGE - ACADEMIA DE GESTÃO E DIREITO, LDA.", 45, 20);
+  doc.setFontSize(12);
+  doc.text("FICHA DE INSCRIÇÃO PARA FORMANDOS", 60, 28);
+
+  let y = 45;
+  
+  // Dados Pessoais
+  doc.setFontSize(11);
+  doc.text("DADOS PESSOAIS", 10, y);
+  y += 5;
+  doc.autoTable({
+    startY: y,
+    theme: 'grid',
+    styles: { fontSize: 9 },
+    margin: { left: 10 },
+    body: [
+      ["Nome Completo", dados.nome],
+      ["Sexo", dados.genero],
+      ["BI/NIF", dados.bi],
+      ["Telefone (Móvel)", dados.telefone],
+      ["E-mail", dados.email],
+    ],
+    columns: [{}, {}]
+  });
+
+  y = doc.lastAutoTable.finalY + 10;
+  doc.text("INFORMAÇÕES ACADÊMICAS", 10, y);
+  y += 5;
+  doc.autoTable({
+    startY: y,
+    theme: 'grid',
+    styles: { fontSize: 9 },
+    margin: { left: 10 },
+    body: [
+      ["Nível de Escolaridade", dados.escolaridade],
+      ["Área de Formação", dados.areaFormacao || '-']
+    ],
+    columns: [{}, {}]
+  });
+
+  y = doc.lastAutoTable.finalY + 10;
+  doc.text("DADOS PROFISSIONAIS (se aplicável)", 10, y);
+  y += 5;
+  doc.autoTable({
+    startY: y,
+    theme: 'grid',
+    styles: { fontSize: 9 },
+    margin: { left: 10 },
+    body: [
+      ["Profissão", dados.profissao || '-'],
+      ["Área de Atuação", dados.atuacao || '-'],
+      ["Tempo de Experiência", dados.tempo || '-']
+    ],
+    columns: [{}, {}]
+  });
+
+  y = doc.lastAutoTable.finalY + 10;
+  doc.text("CURSO(S) DE INTERESSE", 10, y);
+  y += 5;
+  doc.autoTable({
+    startY: y,
+    theme: 'grid',
+    styles: { fontSize: 9 },
+    margin: { left: 10 },
+    body: [
+      ["Curso", dados.curso],
+      ["Horário", dados.horario || '-'],
+    //  ["Período", dados.periodo || '-'],
+      ["Modalidade", dados.modalidade || '-']
+    ],
+    columns: [{}, {}]
+  });
+
+  y = doc.lastAutoTable.finalY + 10;
+  doc.text("MÉTODO DE PAGAMENTO", 10, y);
+  y += 5;
+  doc.text(`Escolhido: ${dados.pagamento || '-'}`, 10, y);
+  y += 10;
+  doc.text("DADOS DO PAGAMENTO", 10, y);
+  y += 5;
+  doc.setFontSize(10);
+  doc.text("Nome do Titular da Conta: Centro de Formação Profissional IAKUTA", 10, y); y += 5;
+  doc.text("Nº de Conta: 270.595.024.10001", 10, y); y += 5;
+  doc.text("IBAN: AO06.0040.0000.7059.5024.1014.7", 10, y); y += 10;
+
+  doc.setFontSize(11);
+  doc.text("AUTORIZAÇÃO E DECLARAÇÃO", 10, y);
+  y += 5;
+  doc.setFontSize(9);
+  doc.text("Declaro que as informações fornecidas nesta ficha de inscrição são verdadeiras.", 10, y); y += 4;
+  doc.text("Autorizo o uso dos meus dados pessoais pela IAKUTA para fins administrativos.", 10, y); y += 4;
+  doc.text("Comprometo-me a cumprir as normas da instituição durante o processo de formação.", 10, y); y += 10;
+  doc.text("Assinatura do Formando: ______________________________", 10, y); y += 6;
+  doc.text(`Data do compromisso: ${new Date().toLocaleDateString()}`, 10, y);
+
+  doc.save(`Ficha_Inscricao_${dados.nome.replace(/\s/g, '_')}.pdf`);
+}
+
+// Função auxiliar para carregar o logo em base64
+async function carregarLogo() {
+  const imgPath = 'imagens/iAKUTA_logo NOVO.png';
+  const response = await fetch(imgPath);
+  const blob = await response.blob();
+  return await new Promise(resolve => {
+    const reader = new FileReader();
+    reader.onloadend = () => resolve(reader.result);
+    reader.readAsDataURL(blob);
+  });
+}
+
+reader.onloadend = () => {
+  console.log('Logo carregado com sucesso!');
+  resolve(reader.result);
+};
