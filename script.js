@@ -497,11 +497,6 @@ document.querySelector('meta[name="viewport"]').content = 'width=device-width, i
 });
 });
 
-// Fechar teclado virtual ao rolar
-window.addEventListener('scroll', function() {
-document.activeElement.blur();
-});
-
 // Substituir o ano estático no rodapé para o ano atual
 document.querySelector('.copyright p').innerHTML = 
 `&copy; ${new Date().getFullYear()} iAKUTA Knowledge Academia. Todos os direitos reservados.`;
