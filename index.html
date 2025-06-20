@@ -456,8 +456,26 @@
 
 <!-- Investimento - Cards clicáveis -->
 <div class="input-group">
-<label>💳 Escolha o Investimento</label>
+<label>💳 Escolha a Modalidade</label>
 <div id="investimento-opcoes" class="investimento-opcoes"></div>
+</div>
+
+<div class="input-group pagamento-opcao">
+<label class="form-label">💰 Método de Pagamento:</label>
+<div class="opcoes-pagamento">
+<label class="radio-pagamento">
+<input type="radio" name="pagamento" value="Transferência Bancária" required>
+<span>Transferência Bancária</span>
+</label>
+<label class="radio-pagamento">
+<input type="radio" name="pagamento" value="Balcão">
+<span>Balcão</span>
+</label>
+<label class="radio-pagamento">
+<input type="radio" name="pagamento" value="TPA">
+<span>TPA</span>
+</label>
+</div>
 </div>
 
 <button type="submit" class="cta-button">
@@ -467,6 +485,8 @@
 </div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
 <script src="script.js"></script> 
 </body>
 </html>
