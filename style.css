@@ -410,7 +410,7 @@ height: 100%;
 background: rgba(0,0,0,0.5);
 align-items: center;
 justify-content: center;
-z-index: 2000;
+z-index: 1000;
 }
 .modal .box {
 background: #fff;
@@ -1538,4 +1538,45 @@ font-size: 14px;
 .channel-action { margin-left: 0; margin-top: 10px; }
     
 .social-links { align-items: center; }
+}
+
+
+.pagemento-opcao {
+  margin-bottom: 20px;
+}
+
+.pagemento-opcao .form-label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+  color: #333;
+}
+
+.opcoes-pagamento {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.radio-pagamento {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid var(--primary, #f06509);
+  padding: 10px 16px;
+  border-radius: 8px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.radio-pagamento:hover {
+  background-color: #fff7f0;
+  border-color: #3498db;
+}
+
+.radio-pagamento input[type="radio"] {
+  accent-color: var(--primary, #f07109);
+  width: 16px;
+  height: 16px;
 }
