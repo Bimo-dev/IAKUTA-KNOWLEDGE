@@ -1668,3 +1668,17 @@ html, body {
   box-sizing: border-box;
 }
 
+/*para remover*/
+@media (max-width: 768px) {
+  .modal {
+    align-items: flex-start;  /* força o topo */
+    padding-top: 50px;        /* espaço para o teclado */
+    height: auto;             /* evita conflito com o teclado */
+    min-height: 100vh;        /* garante cobertura da tela */
+  }
+
+  .modal .box {
+    max-height: none;         /* deixa crescer se precisar */
+    height: auto;
+  }
+}
