@@ -11,18 +11,19 @@ invHTML: `
 <li>81 000,00 Kz</li>
 </ul>
 `,
-
-hr: 'Segunda a Sábado  das 8h as 18h',
-mod: `
-<ul>
+hr: `<div style="text-align:center">
+<div>Segunda a Sábado</div>
+<div style="margin-top:5px">das 8h às 18h</div>
+</div>`,
+mod: `<ul>
 <li>Presencial</li>
 <li>Híbrido</li>
 <li>Online</li>
 </ul>
 `,
 objetivos: 'Capacitar profissionais em técnicas modernas de gestão corporativa',
-destinatarios: 'Gestores, empreendedores e administradores',
-regime: 'Pós-Laboral',
+destinatarios: 'Aos profissionais, gestores, empreendedores e administradores',
+regime: 'Laboral, Pós-laboral, intensivo ou modular, à distância (online) e híbrido',
 material: 'Apostilas digitais, casos práticos e certificado',
 },
 {
@@ -36,17 +37,19 @@ invHTML: `
 <li>69 000,00 Kz</li>
 </ul>
 `,
-hr: 'Sexta e Sábado às 18h',
-mod: `
-<ul>
+hr: `<div style="text-align:center">
+<div>Segunda a Sábado</div>
+<div style="margin-top:5px">das 8h às 18h</div>
+</div>`,
+mod: `<ul>
 <li>Presencial</li>
 <li>Híbrido</li>
 <li>Online</li>
 </ul>
 `,
 objetivos: 'Dominar a legislação tributária angolana',
-destinatarios: 'Advogados, contadores e gestores financeiros',
-regime: 'Flexível',
+destinatarios: 'Aos profissionais, advogados, contadores e gestores financeiros',
+regime: 'Laboral, Pós-laboral, intensivo ou modular, à distância (online) e híbrido',
 material: 'Videoaulas, material PDF e suporte online',
 },
 {
@@ -60,7 +63,10 @@ invHTML: `
 <li>42 000,00 Kz</li>
 </ul>
 `,
-hr: 'Sexta e Sábado às 18h',
+hr: `<div style="text-align:center">
+<div>Segunda a Sábado</div>
+<div style="margin-top:5px">das 8h às 18h</div>
+</div>`,
 mod: `
 <ul>
 <li>Presencial</li>
@@ -69,8 +75,8 @@ mod: `
 </ul>
 `,
 objetivos: 'Dominar estratégias digitais para negócios',
-destinatarios: 'Empreendedores e profissionais de marketing',
-regime: 'Intensivo',
+destinatarios: 'Aos profissionais, empreendedores e profissionais de marketing',
+regime: 'Laboral, Pós-laboral, intensivo ou modular, à distância (online) e híbrido',
 material: 'Kit de ferramentas e certificado'
 },
 {
@@ -84,7 +90,10 @@ invHTML: `
 <li>66 000,00 Kz</li>
 </ul>
 `,
-hr: 'Sexta e Sábado às 18h',
+hr: `<div style="text-align:center">
+<div>Segunda a Sábado</div>
+<div style="margin-top:5px">das 8h às 18h</div>
+</div>`,
 mod: `
 <ul>
 <li>Presencial</li>
@@ -93,8 +102,8 @@ mod: `
 </ul>
 `,
 objetivos: 'Formar especialistas em gestão de pessoas',
-destinatarios: 'Profissionais de RH e gestores',
-regime: 'Pós-Laboral',
+destinatarios: 'Aos profissionais de RH e gestores',
+regime: 'Laboral, Pós-laboral, intensivo ou modular, à distância (online) e híbrido',
 material: 'Casos práticos e simuladores'
 },
 {
@@ -108,7 +117,10 @@ invHTML: `
 <li>210 000,00 Kz</li>
 </ul>
 `,
-hr: 'Sexta e Sábado às 18h',
+hr: `<div style="text-align:center">
+<div>Segunda a Sábado</div>
+<div style="margin-top:5px">das 8h às 18h</div>
+</div>`,
 mod: `
 <ul>
 <li>Presencial</li>
@@ -117,8 +129,8 @@ mod: `
 </ul>
 `,
 objetivos: 'Formar especialistas em gestão de pessoas',
-destinatarios: 'Profissionais de RH e gestores',
-regime: 'Pós-Laboral',
+destinatarios: 'Aos profissionais de RH e gestores',
+regime: 'Laboral, Pós-laboral, intensivo ou modular, à distância (online) e híbrido',
 material: 'Casos práticos e simuladores'
 },
 {
@@ -132,7 +144,10 @@ invHTML: `
 <li>54 000,00 Kz</li>
 </ul>
 `,
-hr: 'Sexta e Sábado às 18h',
+hr: `<div style="text-align:center">
+<div>Segunda a Sábado</div>
+<div style="margin-top:5px">das 8h às 18h</div>
+</div>`,
 mod: `
 <ul>
 <li>Presencial</li>
@@ -141,8 +156,8 @@ mod: `
 </ul>
 `,
 objetivos: 'Prática contábil conforme normas internacionais',
-destinatarios: 'Contabilistas e gestores financeiros',
-regime:'Não confirmado',
+destinatarios: 'Aos profissionais, contabilistas e gestores financeiros',
+regime:'Laboral, Pós-laboral, intensivo ou modular, à distância (online) e híbrido',
 material: 'Planilhas modelo e videoaulas'
 },
 {
@@ -155,7 +170,10 @@ invHTML: `
 <li>144 000,00 Kz</li>
 </ul>
 `,
-hr: 'Sexta e Sábado às 18h',
+hr: `<div style="text-align:center">
+<div>Segunda a Sábado</div>
+<div style="margin-top:5px">das 8h às 18h</div>
+</div>`,
 mod: `
 <ul>
 <li>Presencial</li>
@@ -163,8 +181,8 @@ mod: `
 </ul>
 `,
 objetivos: 'Metodologias ágeis e tradicionais',
-destinatarios: 'Gestores e coordenadores de projetos',
-regime:'Não informado',
+destinatarios: 'Aos profissionais, gestores e coordenadores de projetos',
+regime: 'Laboral, Pós-laboral, intensivo ou modular, à distância (online) e híbrido',
 material: 'Certificação PMP preparatória'
 },
 {
@@ -178,7 +196,10 @@ invHTML: `
 <li>54 000,00 Kz</li>
 </ul>
 `,
-hr: 'Sexta e Sábado às 18h',
+hr: `<div style="text-align:center">
+<div>Segunda a Sábado</div>
+<div style="margin-top:5px">das 8h às 18h</div>
+</div>`,
 mod: `
 <ul>
 <li>Presencial</li>
@@ -187,8 +208,8 @@ mod: `
 </ul>
 `,
 objetivos: 'Legislação trabalhista angolana',
-destinatarios: 'Profissionais de RH e advogados',
-regime:'Não informado',
+destinatarios: 'Aos Profissionais de RH e advogados',
+regime: 'Laboral, Pós-laboral, intensivo ou modular, à distância (online) e híbrido',
 material: 'Código do trabalho atualizado'
 },
 {
@@ -202,7 +223,10 @@ invHTML: `
 <li>210 000,00 Kz</li>
 </ul>
 `,
-hr: 'Sexta e Sábado às 18h',
+hr: `<div style="text-align:center">
+<div>Segunda a Sábado</div>
+<div style="margin-top:5px">das 8h às 18h</div>
+</div>`,
 mod: `
 <ul>
 <li>Presencial</li>
@@ -211,8 +235,8 @@ mod: `
 </ul>
 `,
 objetivos: 'Estratégias de tráfego pago e SEO',
-destinatarios: 'Profissionais de marketing digital',
-regime:'Não informado',
+destinatarios: 'Aos Profissionais de marketing digital',
+regime: 'Laboral, Pós-laboral, intensivo ou modular, à distância (online) e híbrido',
 material: 'Ferramentas premium de análise'
 },
 {
@@ -226,7 +250,10 @@ invHTML: `
 <li>60 000,00 Kz</li>
 </ul>
 `,
-hr: 'Sexta e Sábado às 18h',
+hr: `<div style="text-align:center">
+<div>Segunda a Sábado</div>
+<div style="margin-top:5px">das 8h às 18h</div>
+</div>`,
 mod: `
 <ul>
 <li>Presencial</li>
@@ -235,8 +262,8 @@ mod: `
 </ul>
 `,
 objetivos: 'Estratégias de tráfego pago e SEO',
-destinatarios: 'Profissionais de marketing digital',
-regime:'Não informado',
+destinatarios: 'Aos profissionais de marketing digital',
+regime: 'Laboral, Pós-laboral, intensivo ou modular, à distância (online) e híbrido',
 material: 'Ferramentas premium de análise'
 },
 {
@@ -250,7 +277,10 @@ invHTML: `
 <li>60 000,00 Kz</li>
 </ul>
 `,
-hr: 'Sexta e Sábado às 18h',
+hr: `<div style="text-align:center">
+<div>Segunda a Sábado</div>
+<div style="margin-top:5px">das 8h às 18h</div>
+</div>`,
 mod: `
 <ul>
 <li>Presencial</li>
@@ -259,8 +289,8 @@ mod: `
 </ul>
 `,
 objetivos: 'Criação de conteúdo viral',
-destinatarios: 'Social media managers',
-regime:'Não informado',
+destinatarios: 'Aos profissionais social media managers',
+regime: 'Laboral, Pós-laboral, intensivo ou modular, à distância (online) e híbrido',
 material: 'Kit de templates editáveis'
 }
 ];
@@ -286,7 +316,7 @@ document.getElementById('curso-detalhes').classList.add('visible');
 document.getElementById('detalhe-titulo').textContent = curso.nome;
 document.getElementById('detalhe-objetivos').textContent = curso.objetivos;
 document.getElementById('detalhe-duracao').textContent = curso.dur;
-document.getElementById('detalhe-horario').textContent = curso.hr;
+document.getElementById('detalhe-horario').innerHTML= curso.hr;
 document.getElementById("detalhe-modalidade").innerHTML = curso.mod;
 document.getElementById('detalhe-investimento').innerHTML = curso.invHTML;
 document.getElementById('detalhe-destinatarios').textContent = curso.destinatarios;
@@ -535,7 +565,7 @@ showcase.innerHTML = `
 <small>Clientes</small>
 </div>
 </div>
-<button class="close-showcase">Fechar</button>
+<button class="close-showcase">✕</button>
 </div>
 `;
             
@@ -671,7 +701,7 @@ timeline.innerHTML = `
 <div class="details">Plano de expansão internacional e novos mercados</div>
 </div>
 </div>
-<button class="close-timeline">Voltar</button>
+<button class="close-timeline">✕</button>
 </div>
 `;
     
