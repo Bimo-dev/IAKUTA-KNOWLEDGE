@@ -1080,13 +1080,3 @@ reader.onloadend = () => {
   console.log('Logo carregado com sucesso!');
   resolve(reader.result);
 };
-
-//para remover 
-// FORÇA O INPUT A FOCAR CORRETAMENTE
-document.querySelectorAll('input, textarea, select').forEach(el => {
-  el.addEventListener('focus', () => {
-    setTimeout(() => {
-      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }, 300);
-  });
-});
