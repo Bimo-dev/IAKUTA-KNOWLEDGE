@@ -1667,28 +1667,3 @@ html, body {
   overflow-x: hidden;
   box-sizing: border-box;
 }
-
-/*para remover*/
-@media (max-width: 768px) {
-  .modal {
-    position: absolute !important;  /* ← importante */
-    height: auto;
-    min-height: 100vh;
-    align-items: flex-start;
-    padding: 30px 15px;
-    overflow-y: visible;
-  }
-
-  .modal .box {
-    height: auto;
-    max-height: none;
-    overflow: visible;
-    box-sizing: border-box;
-    width: 100%;
-  }
-
-  body {
-    position: relative;
-    overflow-x: hidden;
-  }
-}
